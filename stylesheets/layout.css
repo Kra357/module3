@@ -1,0 +1,84 @@
+/* Оформление */
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+body {
+  overflow-x: hidden;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-color: rgba(1, 1, 1, 1);
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+/* для контейнера */
+.container {
+  position: relative;
+}
+
+/*секция один\приветсвие */
+.greetings img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* секция со скотчем */
+.tapeandbox img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bigpaper {
+  position: absolute;
+  top: 33vh;
+  z-index: 2;
+  max-width: 100%;
+  height: auto;
+  transform: rotate(-2deg);
+}
+
+.bigpaper img {
+  width: 100%;
+  display: block;
+}
+
+#draggableTape {
+  position: absolute;
+  top: 30vh;
+  left: 5vw;
+  z-index: 3;
+  transform: rotate(-3deg);
+  cursor: grab;
+  transition:
+    transform 0.1s ease,
+    filter 0.2s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.minitape1:active {
+  cursor: grabbing;
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
+  transform: rotate(-3deg) scale(1.02);
+}
+
+.minitape1.dragging {
+  opacity: 0.9;
+  transition: none;
+  cursor: grabbing;
+}
+
+.minitape1.pinned {
+  cursor: default;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.minitape1.pinned:active {
+  cursor: default;
+  transform: rotate(-3deg);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
