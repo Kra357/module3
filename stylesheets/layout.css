@@ -9,57 +9,88 @@ body {
   background-size: 100vw;
   background-repeat: no-repeat;
   background-color: rgba(1, 1, 1, 1);
+  position: relative;
 }
+
 .wrapper {
   display: flex;
   flex-direction: column;
 }
-/* для контейнера */
-.container {
-  position: relative;
+
+/* секция с приветсвием */
+.greetings {
+  border: 2px solid red;
 }
 
-/*секция один\приветсвие */
 .greetings img {
   max-width: 100%;
   height: auto;
 }
 
-/* секция со скотчем */
-.tapeandbox img {
-  max-width: 100%;
-  height: auto;
+.name {
+  position: absolute;
+  border: 2px solid red;
+  width: 60vw;
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-image: url(../img/name.png);
+  background-size: contain;
+  background-position: center; /* Центрирует изображение */
+  top: 2vh;
+  left: 20vw;
 }
 
-.bigpaper {
+/* промежуточный блок */
+.bigtape {
   position: absolute;
-  top: 33vh;
+  top: 32vh;
+}
+.bigtape img {
+  max-width: 100%;
+  height: auto;
   z-index: 2;
+}
+
+/* секция со скотчем */
+.box {
+  border: 2px solid red;
+}
+
+.box img {
   max-width: 100%;
   height: auto;
-  transform: rotate(-2deg);
 }
 
-.bigpaper img {
-  width: 100%;
-  display: block;
-}
-
-#draggableTape {
+.tape1 {
   position: absolute;
-  cursor: grab;
+  border: 2px solid red;
+  width: 13vw;
+  height: 26vh;
+  background-image: url(../img/minitape1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; /* Центрирует изображение */
+  top: 32vh;
   transition:
-    transform 0.1s ease,
-    filter 0.2s ease;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  cursor: pointer;
 }
+
 .minitape1 {
+  border: 2px solid red;
   top: 30vh;
   left: 5vw;
   z-index: 3;
-  transform: rotate(-3deg);
+  position: absolute;
+}
+
+.minitape1 img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 8vw;
 }
 
 .minitape1:active {
@@ -69,10 +100,19 @@ body {
 }
 
 .minitape2 {
+  border: 2px solid red;
   top: 45vh;
   left: 15vw;
   z-index: 3;
   transform: rotate(-18deg);
+  position: absolute;
+}
+.minitape2 img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 7vw;
 }
 
 .minitape2:active {
@@ -85,6 +125,15 @@ body {
   left: 19vw;
   z-index: 3;
   transform: rotate(-15deg);
+  position: absolute;
+}
+
+.minitape3 img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 11vw;
 }
 
 .minitape3:active {
@@ -95,15 +144,25 @@ body {
 
 .minitape4 {
   top: 34vh;
-  left: 32vw;
+  left: 27vw;
   z-index: 3;
-  transform: rotate(9deg);
+  transform: rotate(16deg);
+  position: absolute;
+}
+
+.minitape4 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 12vw;
 }
 
 .minitape4:active {
   cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
-  transform: rotate(-3deg) scale(1.02);
+  transform: rotate(13deg) scale(1.02);
 }
 
 .minitape5 {
@@ -111,6 +170,16 @@ body {
   left: 43vw;
   z-index: 3;
   transform: rotate(40deg);
+  position: absolute;
+}
+
+.minitape5 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 11vw;
 }
 
 .minitape5:active {
@@ -123,6 +192,16 @@ body {
   top: 28vh;
   left: 50vw;
   z-index: 3;
+  position: absolute;
+}
+
+.minitape6 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 10vw;
 }
 
 .minitape6:active {
@@ -133,8 +212,19 @@ body {
 
 .minitape7 {
   top: 32vh;
-  left: 61vw;
+  left: 60vw;
   z-index: 3;
+  position: absolute;
+}
+
+.minitape7 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 5vw;
+  transform: rotate(5deg);
 }
 
 .minitape7:active {
@@ -144,9 +234,21 @@ body {
 }
 
 .minitape8 {
-  top: 41vh;
-  left: 68vw;
+  top: 38vh;
+  left: 63vw;
   z-index: 3;
+  position: absolute;
+}
+
+.minitape8 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 7vw;
+  transform: rotate(-5deg);
+  position: absolute;
 }
 
 .minitape8:active {
@@ -156,10 +258,21 @@ body {
 }
 
 .minitape9 {
-  top: 45vh;
-  left: 80vw;
+  top: 43vh;
+  left: 72vw;
   z-index: 3;
   transform: rotate(19deg);
+  position: absolute;
+}
+
+.minitape9 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 7vw;
+  transform: rotate(-5deg);
 }
 
 .minitape9:active {
@@ -169,10 +282,20 @@ body {
 }
 
 .minitape10 {
-  top: 18vh;
+  top: 20vh;
   left: 70vw;
   z-index: 3;
   transform: rotate(315deg);
+  position: absolute;
+}
+.minitape10 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 12vw;
+  transform: rotate(-5deg);
 }
 
 .minitape10:active {
@@ -183,9 +306,20 @@ body {
 
 .minitape11 {
   top: 18vh;
-  left: 84vw;
+  left: 80vw;
   z-index: 3;
   transform: rotate(-10deg);
+  position: absolute;
+}
+
+.minitape11 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 7vw;
+  transform: rotate(-5deg);
 }
 
 .minitape11:active {
@@ -198,6 +332,17 @@ body {
   top: 23vh;
   left: 87vw;
   z-index: 3;
+  transform: rotate(-20deg);
+  position: absolute;
+}
+
+.minitape12 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 11vw;
   transform: rotate(-20deg);
 }
 
@@ -212,8 +357,17 @@ body {
   left: 1vw;
   z-index: 3;
   transform: rotate(-4deg);
+  position: absolute;
 }
 
+.minitape13 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 6vw;
+}
 .minitape13:active {
   cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
@@ -225,6 +379,15 @@ body {
   left: 14vw;
   z-index: 3;
   transform: rotate(13deg);
+  position: absolute;
+}
+.minitape14 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 6vw;
 }
 
 .minitape14:active {
@@ -238,8 +401,17 @@ body {
   left: 42vw;
   z-index: 3;
   transform: rotate(-26deg);
+  position: absolute;
 }
 
+.minitape15 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 8vw;
+}
 .minitape15:active {
   cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
@@ -247,10 +419,19 @@ body {
 }
 
 .minitape16 {
-  top: 18vh;
+  top: 29vh;
   left: 36vw;
   z-index: 3;
-  transform: rotate(-320deg);
+  transform: rotate(-340deg);
+  position: absolute;
+}
+.minitape16 img {
+  border: 2px solid red;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  width: 9vw;
 }
 
 .minitape16:active {
@@ -259,22 +440,35 @@ body {
   transform: rotate(-317deg) scale(1.02);
 }
 
-/* секция с коробкой с предметами */
-.stonewall img {
+/* <!-- cекция с изучением предметов --> */
+
+.boxwiththings {
+  border: 2px solid red;
+  position: absolute;
+  top: 120vh;
+  z-index: -1;
+}
+
+.boxwiththings img {
   max-width: 100%;
   height: auto;
 }
 
-.box {
-  width: 50vw;
-  height: 70vh;
+.box2 {
+  position: absolute;
+  z-index: 1;
+  top: 100vw;
+}
+
+.box2 {
+  height: 80vh;
   z-index: 3;
   position: absolute;
-  top: 210vh;
+  top: 200vh;
   left: 35vw;
 }
 
-.box img {
+.box2 img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -286,22 +480,20 @@ body {
 }
 
 .shadow {
-  width: 45vw;
   height: 55vh;
   z-index: 2;
   position: absolute;
-  top: 218vh;
+  top: 215vh;
   left: 42vw;
 }
 
 .boxinfront {
-  width: 34vw;
-  height: 44vh;
+  height: 54vh;
   object-fit: contain;
   position: absolute;
-  top: 228vh;
+  top: 218vh;
   left: 41vw;
-  z-index: 4;
+  z-index: 5;
 }
 
 .boxinfront img {
@@ -310,15 +502,15 @@ body {
 }
 
 .firstwheel {
-  width: 20vw;
-  height: 40vh;
+  height: 50vh;
   object-fit: contain;
   position: absolute;
-  top: 200vh;
+  top: 186vh;
   left: 41vw;
   z-index: 3;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  animation: rotate 10s linear infinite;
 }
 
 .firstwheel img {
@@ -326,7 +518,104 @@ body {
   height: 100%;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .firstwheel:hover {
+  transform: scale(1.2);
+  top: calc(186vh - 4%);
+}
+
+.lamp {
+  height: 70vh;
+  object-fit: contain;
+  position: absolute;
+  top: 172vh;
+  left: 50vw;
+  z-index: 4;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.lamp img {
+  width: 100%;
+  height: 100%;
+}
+
+.lamp:hover {
   transform: scale(1.1);
-  top: calc(200vh - 1%);
+  top: calc(172vh - 2%);
+}
+
+.printingmachine {
+  height: 65vh;
+  object-fit: contain;
+  position: absolute;
+  top: 175vh;
+  left: 53vw;
+  z-index: 3;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  transform: rotate(-13deg);
+}
+
+.printingmachine img {
+  width: 100%;
+  height: 100%;
+}
+
+.printingmachine:hover {
+  top: calc(175vh - 2%);
+  transform: scale(1.1);
+}
+
+.paper {
+  height: 40vh;
+  object-fit: contain;
+  position: absolute;
+  top: 235vh;
+  left: 5vw;
+  z-index: 3;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+.paper img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* секция с глазами */
+.section4 {
+  position: absolute;
+  top: 282vh;
+}
+
+.eyebackground img {
+  width: 100%;
+  height: 100%;
+}
+
+.pupil1 {
+  position: absolute;
+  top: 80vh;
+  z-index: 2;
 }
