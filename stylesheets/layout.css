@@ -464,7 +464,7 @@ body {
   height: 80vh;
   z-index: 3;
   position: absolute;
-  top: 200vh;
+  top: 185vh;
   left: 35vw;
 }
 
@@ -483,7 +483,7 @@ body {
   height: 55vh;
   z-index: 2;
   position: absolute;
-  top: 215vh;
+  top: 200vh;
   left: 42vw;
 }
 
@@ -491,7 +491,7 @@ body {
   height: 54vh;
   object-fit: contain;
   position: absolute;
-  top: 218vh;
+  top: 203vh;
   left: 41vw;
   z-index: 5;
 }
@@ -505,7 +505,7 @@ body {
   height: 50vh;
   object-fit: contain;
   position: absolute;
-  top: 186vh;
+  top: 171vh;
   left: 41vw;
   z-index: 3;
   transition: all 0.3s ease-in-out;
@@ -528,14 +528,14 @@ body {
 }
 .firstwheel:hover {
   transform: scale(1.2);
-  top: calc(186vh - 4%);
+  top: calc(171vh - 4%);
 }
 
 .lamp {
   height: 70vh;
   object-fit: contain;
   position: absolute;
-  top: 172vh;
+  top: 157vh;
   left: 50vw;
   z-index: 4;
   transition: all 0.3s ease-in-out;
@@ -549,14 +549,14 @@ body {
 
 .lamp:hover {
   transform: scale(1.1);
-  top: calc(172vh - 2%);
+  top: calc(157vh - 2%);
 }
 
 .printingmachine {
   height: 65vh;
   object-fit: contain;
   position: absolute;
-  top: 175vh;
+  top: 160vh;
   left: 53vw;
   z-index: 3;
   transition: all 0.3s ease-in-out;
@@ -570,7 +570,7 @@ body {
 }
 
 .printingmachine:hover {
-  top: calc(175vh - 2%);
+  top: calc(160vh - 2%);
   transform: scale(1.1);
 }
 
@@ -578,7 +578,7 @@ body {
   height: 40vh;
   object-fit: contain;
   position: absolute;
-  top: 235vh;
+  top: 220vh;
   left: 5vw;
   z-index: 3;
   transition: all 0.3s ease-in-out;
@@ -604,18 +604,171 @@ body {
 }
 
 /* секция с глазами */
-.section4 {
+
+.eyebackground {
   position: absolute;
-  top: 282vh;
+  border: 2px solid red;
+  top: 140vw;
 }
 
 .eyebackground img {
-  width: 100%;
-  height: 100%;
+  border: 2px solid red;
+  max-width: 100%;
+  height: auto;
+}
+
+.eyebackground2 {
+  position: absolute;
+  border: 2px solid red;
+  top: 120vw;
+  z-index: 3;
+}
+
+.eyebackground2 img {
+  max-width: 100%;
+  height: auto;
 }
 
 .pupil1 {
+  width: 30vw;
+  height: 29vh;
   position: absolute;
-  top: 80vh;
+  border: 2px solid red;
+  top: 330vh;
   z-index: 2;
+  left: 6vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pupil2 {
+  width: 30vw;
+  height: 29vh;
+  position: absolute;
+  border: 2px solid red;
+  top: 320vh;
+  z-index: 2;
+  left: 60vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pupil1 img,
+.pupil2 img {
+  width: 40%;
+  height: auto;
+  transition: transform 0.2s ease-out;
+  pointer-events: none;
+}
+
+/* рамка */
+.border {
+  position: absolute;
+  border: 2px solid red;
+  top: 183vw;
+  z-index: 3;
+  left: -3vw;
+}
+
+.border img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* секция с рисованием */
+#drawingCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  background: transparent;
+}
+.desk {
+  position: absolute;
+  border: 2px solid red;
+  top: 180vw;
+}
+
+.desk img {
+  border: 2px solid red;
+  max-width: 100%;
+  height: auto;
+}
+
+.book {
+  width: 50vw;
+  position: absolute;
+  border: 2px solid red;
+  top: 195vw;
+  left: 6vw;
+}
+
+.book img {
+  max-width: 100%;
+  height: auto;
+  pointer-events: none; /* Чтобы img не мешал рисованию */
+}
+
+.pen {
+  width: 23vw;
+  position: absolute;
+  border: 2px solid red;
+  top: 216vw;
+  left: 60vw;
+}
+
+.pen img {
+  max-width: 100%;
+  height: auto;
+}
+
+.eraser {
+  width: 10vw;
+  position: absolute;
+  border: 2px solid red;
+  top: 200vw;
+  left: 70vw;
+}
+
+.eraser img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* <!-- вторая рамка --> */
+.border2 {
+  position: absolute;
+  border: 2px solid red;
+  top: 246vw;
+  z-index: 3;
+}
+
+.border2 img {
+  max-width: 83%;
+  height: auto;
+}
+
+/* <!-- гардероб --> */
+
+.wardrobebackground {
+  position: absolute;
+  border: 2px solid red;
+  top: 247vw;
+}
+
+.wardrobebackground img {
+  max-width: 100%;
+  height: auto;
+}
+
+.men {
+  position: absolute;
+  border: 2px solid red;
+  width: 21vw;
+  top: -3vw;
+  left: 5vw;
 }
