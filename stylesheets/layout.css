@@ -19,7 +19,6 @@ body {
 
 /* секция с приветсвием */
 .greetings {
-  border: 2px solid red;
 }
 
 .greetings img {
@@ -29,7 +28,7 @@ body {
 
 .name {
   position: absolute;
-  border: 2px solid red;
+
   width: 60vw;
   height: 30vh;
   background-repeat: no-repeat;
@@ -53,7 +52,6 @@ body {
 
 /* секция со скотчем */
 .box {
-  border: 2px solid red;
 }
 
 .box img {
@@ -63,7 +61,7 @@ body {
 
 .tape1 {
   position: absolute;
-  border: 2px solid red;
+
   width: 13vw;
   height: 26vh;
   background-image: url(../img/minitape1.png);
@@ -78,7 +76,6 @@ body {
 }
 
 .minitape1 {
-  border: 2px solid red;
   top: 30vh;
   left: 5vw;
   z-index: 3;
@@ -100,7 +97,6 @@ body {
 }
 
 .minitape2 {
-  border: 2px solid red;
   top: 45vh;
   left: 15vw;
   z-index: 3;
@@ -151,7 +147,6 @@ body {
 }
 
 .minitape4 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -174,7 +169,6 @@ body {
 }
 
 .minitape5 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -196,7 +190,6 @@ body {
 }
 
 .minitape6 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -218,7 +211,6 @@ body {
 }
 
 .minitape7 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -241,7 +233,6 @@ body {
 }
 
 .minitape8 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -266,7 +257,6 @@ body {
 }
 
 .minitape9 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -289,7 +279,6 @@ body {
   position: absolute;
 }
 .minitape10 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -313,7 +302,6 @@ body {
 }
 
 .minitape11 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -337,7 +325,6 @@ body {
 }
 
 .minitape12 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -361,7 +348,6 @@ body {
 }
 
 .minitape13 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -382,7 +368,6 @@ body {
   position: absolute;
 }
 .minitape14 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -405,7 +390,6 @@ body {
 }
 
 .minitape15 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -426,7 +410,6 @@ body {
   position: absolute;
 }
 .minitape16 img {
-  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
@@ -443,7 +426,6 @@ body {
 /* <!-- cекция с изучением предметов --> */
 
 .boxwiththings {
-  border: 2px solid red;
   position: absolute;
   top: 120vh;
   z-index: -1;
@@ -607,19 +589,18 @@ body {
 
 .eyebackground {
   position: absolute;
-  border: 2px solid red;
+
   top: 140vw;
 }
 
 .eyebackground img {
-  border: 2px solid red;
   max-width: 100%;
   height: auto;
 }
 
 .eyebackground2 {
   position: absolute;
-  border: 2px solid red;
+
   top: 120vw;
   z-index: 3;
 }
@@ -633,7 +614,7 @@ body {
   width: 30vw;
   height: 29vh;
   position: absolute;
-  border: 2px solid red;
+
   top: 330vh;
   z-index: 2;
   left: 6vw;
@@ -646,7 +627,7 @@ body {
   width: 30vw;
   height: 29vh;
   position: absolute;
-  border: 2px solid red;
+
   top: 320vh;
   z-index: 2;
   left: 60vw;
@@ -666,7 +647,7 @@ body {
 /* рамка */
 .border {
   position: absolute;
-  border: 2px solid red;
+
   top: 183vw;
   z-index: 3;
   left: -3vw;
@@ -680,21 +661,20 @@ body {
 /* секция с рисованием */
 #drawingCanvas {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 5vw;
+  left: 5vw;
+  width: 39vw;
+  height: auto;
   cursor: crosshair;
   background: transparent;
 }
 .desk {
   position: absolute;
-  border: 2px solid red;
+
   top: 180vw;
 }
 
 .desk img {
-  border: 2px solid red;
   max-width: 100%;
   height: auto;
 }
@@ -702,7 +682,7 @@ body {
 .book {
   width: 50vw;
   position: absolute;
-  border: 2px solid red;
+
   top: 195vw;
   left: 6vw;
 }
@@ -710,13 +690,13 @@ body {
 .book img {
   max-width: 100%;
   height: auto;
-  pointer-events: none; /* Чтобы img не мешал рисованию */
+  pointer-events: none;
 }
 
 .pen {
   width: 23vw;
   position: absolute;
-  border: 2px solid red;
+
   top: 216vw;
   left: 60vw;
 }
@@ -729,7 +709,7 @@ body {
 .eraser {
   width: 10vw;
   position: absolute;
-  border: 2px solid red;
+
   top: 200vw;
   left: 70vw;
 }
@@ -742,9 +722,10 @@ body {
 /* <!-- вторая рамка --> */
 .border2 {
   position: absolute;
-  border: 2px solid red;
+
   top: 246vw;
   z-index: 3;
+  transform: rotate(2deg);
 }
 
 .border2 img {
@@ -756,7 +737,7 @@ body {
 
 .wardrobebackground {
   position: absolute;
-  border: 2px solid red;
+
   top: 247vw;
 }
 
@@ -767,8 +748,229 @@ body {
 
 .men {
   position: absolute;
-  border: 2px solid red;
+
   width: 21vw;
   top: -3vw;
   left: 5vw;
+}
+
+.memwithhair {
+  position: absolute;
+
+  width: 21vw;
+  top: -0.5vw;
+  left: 5vw;
+}
+.mangirl {
+  position: absolute;
+
+  width: 25.5vw;
+  top: 2vw;
+  left: 0.5vw;
+}
+
+.manhse {
+  position: absolute;
+
+  width: 29vw;
+  top: 1vw;
+  left: 1vw;
+}
+.baghse {
+  position: absolute;
+
+  height: 70vh;
+  top: -7vh;
+  left: 70vw;
+}
+
+.baghse:active {
+  cursor: grabbing;
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
+  transform: rotate(10deg) scale(1.02);
+}
+
+.baghse img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hair {
+  position: absolute;
+
+  left: 55vw;
+  top: 46vh;
+}
+.hair:active {
+  cursor: grabbing;
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
+  transform: rotate(10deg) scale(1.02);
+}
+
+.hair2 {
+  position: absolute;
+
+  left: 46vw;
+  top: 3.5vw;
+}
+
+.bookk {
+  position: absolute;
+
+  left: 45vw;
+  top: 50.5vh;
+}
+
+.closedoor {
+  position: absolute;
+
+  width: 68vw;
+  right: 0;
+  top: -4vh;
+  opacity: 1;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.opendoor {
+  position: absolute;
+
+  width: 68vw;
+  right: -2vw;
+  top: -12vh;
+  opacity: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.opendoor img {
+  width: 100%;
+  height: auto;
+}
+.closedoor:hover {
+  opacity: 0;
+}
+
+.closedoor:hover ~ .opendoor {
+  opacity: 1;
+}
+
+/* забыла проставить индекс у предметов в шкафу*/
+.men,
+.baghse,
+.hair,
+.hair2,
+.bookk {
+  z-index: 4;
+}
+
+.wardrobebackground.door-open .men,
+.wardrobebackground.door-open .baghse,
+.wardrobebackground.door-open .hair,
+.wardrobebackground.door-open .hair2,
+.wardrobebackground.door-open .bookk {
+  z-index: 10;
+}
+
+.wardrobebackground.door-open .closedoor {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wardrobebackground.door-open .opendoor {
+  opacity: 1;
+}
+
+/* Анимации для появления персонажа */
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes return {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Сообщение при drag & drop */
+.drag-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  z-index: 1000;
+  display: none;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+.hair,
+.hair2,
+.baghse,
+.bookk {
+  cursor: grab;
+  transition: all 0.1s ease;
+}
+
+.hair:active,
+.hair2:active,
+.baghse:active,
+.bookk:active {
+  cursor: grabbing;
+}
+
+/* подвал */
+.final {
+  position: relative;
+  margin-top: 458vh;
+}
+
+.final img {
+  width: 100%;
+  height: auto;
+}
+
+.cut {
+  position: absolute;
+  top: 295vw;
+  left: 11vw;
+}
+.cut2 {
+  position: absolute;
+  top: 295vw;
+  left: 29vw;
 }
