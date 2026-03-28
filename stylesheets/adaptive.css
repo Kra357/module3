@@ -1,16 +1,4 @@
-/* стили для планшетов  */
-
-@media (max-width: 1024px) {
-  .name {
-    top: -3vw;
-  }
-  .bigtape {
-    top: 12vw;
-  }
-  /* ... остальные элементы с промежуточными значениями */
-}
-
-@media (max-width: 768px) {
+@media (width < 768px) {
   * {
     box-sizing: border-box;
     margin: 0 auto;
@@ -26,7 +14,8 @@
   }
 
   .name {
-    top: -5vw;
+    position: absolute;
+    top: 2vh;
   }
 
   .bigtape {
@@ -75,7 +64,7 @@
 
   .box2 {
     width: 45vw;
-    position: absolute;
+
     z-index: 1;
     top: 58vw;
     left: 40vw;
