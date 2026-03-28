@@ -1,4 +1,5 @@
 /* Оформление */
+
 * {
   box-sizing: border-box;
   margin: 0 auto;
@@ -52,6 +53,7 @@ body {
 
 /* секция со скотчем */
 .box {
+  border: 2px solid rgb(255, 0, 0);
 }
 
 .box img {
@@ -426,6 +428,8 @@ body {
 /* <!-- cекция с изучением предметов --> */
 
 .boxwiththings {
+  border: 2px solid rgb(255, 0, 0);
+  width: 100%;
   position: absolute;
   top: 120vh;
   z-index: -1;

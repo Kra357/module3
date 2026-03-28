@@ -1,10 +1,22 @@
 /* стили для планшетов  */
+
+@media (max-width: 1024px) {
+  .name {
+    top: -3vw;
+  }
+  .bigtape {
+    top: 12vw;
+  }
+  /* ... остальные элементы с промежуточными значениями */
+}
+
 @media (max-width: 768px) {
   * {
     box-sizing: border-box;
     margin: 0 auto;
     padding: 0 auto;
   }
+
   body {
     overflow-x: hidden;
     background-size: 100vw;
@@ -18,6 +30,192 @@
   }
 
   .bigtape {
+    position: absolute;
     top: 15vw;
+  }
+
+  .minitape1 {
+    position: absolute;
+    top: 16vw;
+  }
+
+  .minitape13,
+  .minitape4,
+  .minitape5,
+  .minitape6,
+  .minitape3,
+  .minitape2,
+  .minitape8 {
+    position: absolute;
+    top: 15vw;
+  }
+
+  .minitape7,
+  .minitape9,
+  .minitape10,
+  .minitape11,
+  .minitape12,
+  .minitape13,
+  .minitape15,
+  .minitape16 {
+    position: absolute;
+    top: 15vw;
+  }
+
+  .minitape14 {
+    position: absolute;
+    top: 20vw;
+  }
+
+  .boxwiththings {
+    position: absolute;
+    top: 60vw;
+    z-index: -1;
+  }
+
+  .box2 {
+    width: 45vw;
+    position: absolute;
+    z-index: 1;
+    top: 65vw;
+    left: 40vw;
+  }
+
+  .shadow {
+    width: 45vw;
+    height: auto;
+    position: absolute;
+    z-index: 0;
+    top: 100vw;
+    left: 45vw;
+  }
+
+  .boxinfront {
+    width: 30vw;
+    height: auto;
+    position: absolute;
+    z-index: 5;
+    top: 96vw;
+    left: 46vw;
+  }
+
+  .firstwheel {
+    width: 18vw;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    top: 84vw;
+    left: 46vw;
+  }
+  .firstwheel:hover {
+    transform: scale(1.2);
+    top: calc(16% - 1%);
+  }
+
+  .lamp {
+    width: 18vw;
+    height: auto;
+    position: absolute;
+    z-index: 4;
+    top: 84vw;
+    left: 55vw;
+  }
+
+  .lamp:hover {
+    transform: scale(1.1);
+    top: calc(16% - 1%);
+  }
+
+  .printingmachine {
+    width: 30vw;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 80vw;
+    left: 55vw;
+  }
+  .printingmachine:hover {
+    top: calc(88vw - 1vw);
+    transform: scale(1.1);
+  }
+
+  .paper {
+    width: 30vw;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 105vw;
+    left: 7vw;
+  }
+
+  .pupil1 {
+    width: 40vw;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    top: 158vw;
+    left: 7vw;
+  }
+
+  .pupil2 {
+    width: 40vw;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    top: 157vw;
+    left: 47%;
+  }
+
+  .border2 {
+    width: 50vw;
+    top: 45.69%;
+  }
+
+  .wardrobebackground {
+    position: absolute;
+    top: 240vw;
+  }
+
+  .baghse {
+    width: 20vw;
+    position: absolute;
+    top: -6%;
+  }
+
+  .hair {
+    width: 20vw;
+    position: absolute;
+    top: 45%;
+  }
+
+  .hair2 {
+    width: 20vw;
+    position: absolute;
+    top: 6%;
+  }
+
+  .bookk {
+    width: 20vw;
+    position: absolute;
+    top: 50%;
+  }
+
+  .closedoor {
+    right: -1%;
+    top: -2%;
+  }
+
+  .opendoor {
+    top: -11%;
+  }
+
+  .final {
+    height: 10vw;
+    width: auto;
+    position: absolute;
+    top: -229vw;
+  }
+
+  .cut {
   }
 }
