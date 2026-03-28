@@ -29,14 +29,13 @@ body {
 
 .name {
   position: absolute;
-
   width: 60vw;
-  height: 30vh;
+  height: 30vw;
   background-repeat: no-repeat;
   background-image: url(../img/name.png);
   background-size: contain;
   background-position: center; /* Центрирует изображение */
-  top: 2vh;
+  top: -7vw;
   left: 20vw;
 }
 
@@ -447,11 +446,12 @@ body {
 }
 
 .box2 {
-  height: 80vh;
+  height: 80vw;
   z-index: 3;
   position: absolute;
   top: 185vh;
   left: 35vw;
+  border: 2px solid rgb(255, 0, 0);
 }
 
 .box2 img {
@@ -959,8 +959,9 @@ body {
 
 /* подвал */
 .final {
+  height: 20vw;
   position: relative;
-  margin-top: 458vh;
+  margin-top: 220vw;
 }
 
 .final img {

@@ -1,4 +1,4 @@
-@media (width < 1300px) {
+@media screen and (min-width: 481px) and (max-width: 1279px) {
   * {
     box-sizing: border-box;
     margin: 0 auto;
@@ -15,7 +15,7 @@
 
   .name {
     position: absolute;
-    top: 2vh;
+    top: -5vw;
   }
 
   .bigtape {
@@ -64,9 +64,8 @@
 
   .box2 {
     width: 45vw;
-
     z-index: 1;
-    top: 58vw;
+    top: 63vw;
     left: 40vw;
   }
 
@@ -98,7 +97,7 @@
   }
   .firstwheel:hover {
     transform: scale(1.2);
-    top: calc(16% - 1%);
+    top: calc(84vw - 7vw);
   }
 
   .lamp {
@@ -112,7 +111,7 @@
 
   .lamp:hover {
     transform: scale(1.1);
-    top: calc(16% - 1%);
+    top: calc(82vw - 7vw);
   }
 
   .printingmachine {
@@ -124,7 +123,7 @@
     left: 55vw;
   }
   .printingmachine:hover {
-    top: calc(88vw - 1vw);
+    top: calc(88vw - 12vw);
     transform: scale(1.1);
   }
 
@@ -202,9 +201,163 @@
     height: 10vw;
     width: auto;
     position: absolute;
-    top: -229vw;
+    top: 67vw;
+  }
+  .final img {
+    width: 100%;
+    height: auto;
   }
 
   .cut {
+    width: 7vw;
+    top: 285.5vw;
+    left: 15vw;
+    transform: rotate(7deg);
+  }
+
+  .cut2 {
+    width: 7vw;
+    top: 285.5vw;
+    left: 25vw;
+  }
+
+  .border2 {
+    top: 240vw;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  .name {
+    position: absolute;
+    top: -15vw;
+  }
+
+  .bigtape {
+    position: absolute;
+    top: 18vw;
+  }
+
+  .greetings img {
+    max-width: 110%;
+    height: auto;
+  }
+  .box {
+    display: grid;
+    place-items: center;
+  }
+  .box img {
+    max-width: 130%;
+  }
+
+  .minitape1 {
+    position: absolute;
+    top: 16vw;
+  }
+
+  .minitape13,
+  .minitape4,
+  .minitape5,
+  .minitape6,
+  .minitape3,
+  .minitape2,
+  .minitape8 {
+    position: absolute;
+    top: 15vw;
+  }
+
+  .minitape7,
+  .minitape9,
+  .minitape10,
+  .minitape11,
+  .minitape12,
+  .minitape13,
+  .minitape15,
+  .minitape16 {
+    position: absolute;
+    top: 15vw;
+  }
+
+  .minitape14 {
+    position: absolute;
+    top: 20vw;
+  }
+  .boxwiththings {
+    position: absolute;
+    top: 60vw;
+    z-index: -1;
+  }
+
+  .box2 {
+    width: 45vw;
+    z-index: 1;
+    top: 65vw;
+    left: 40vw;
+  }
+
+  .shadow {
+    width: 45vw;
+    height: auto;
+    position: absolute;
+    z-index: 0;
+    top: 100vw;
+    left: 45vw;
+  }
+
+  .boxinfront {
+    width: 30vw;
+    height: auto;
+    position: absolute;
+    z-index: 5;
+    top: 96vw;
+    left: 46vw;
+  }
+
+  .firstwheel {
+    width: 18vw;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    top: 84vw;
+    left: 46vw;
+  }
+  .firstwheel:hover {
+    transform: scale(1.2);
+    top: calc(84vw - 7vw);
+  }
+
+  .lamp {
+    width: 18vw;
+    height: auto;
+    position: absolute;
+    z-index: 4;
+    top: 84vw;
+    left: 55vw;
+  }
+
+  .lamp:hover {
+    transform: scale(1.1);
+    top: calc(82vw - 7vw);
+  }
+
+  .printingmachine {
+    width: 30vw;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 80vw;
+    left: 55vw;
+  }
+  .printingmachine:hover {
+    top: calc(88vw - 12vw);
+    transform: scale(1.1);
+  }
+
+  .paper {
+    width: 30vw;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    top: 105vw;
+    left: 7vw;
   }
 }
