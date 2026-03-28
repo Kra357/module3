@@ -1,4 +1,4 @@
-@media (width < 768px) {
+@media (width < 1300px) {
   * {
     box-sizing: border-box;
     margin: 0 auto;
