@@ -1,1 +1,23 @@
+/* стили для планшетов  */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 auto;
+  }
+  body {
+    overflow-x: hidden;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-color: rgba(1, 1, 1, 1);
+    position: relative;
+  }
 
+  .name {
+    top: -5vw;
+  }
+
+  .bigtape {
+    top: 15vw;
+  }
+}
