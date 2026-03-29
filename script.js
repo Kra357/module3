@@ -535,3 +535,82 @@ document.addEventListener("DOMContentLoaded", function () {
     showMessage("Все сброшено!");
   };
 });
+
+// Простой drag & drop для всех minitape
+const tapes = document.querySelectorAll('[class^="minitape"]');
+
+let draggedElement = null;
+let startX = 0;
+let startY = 0;
+let initialLeft = 0;
+let initialTop = 0;
+
+// Делаем все скотчи перетаскиваемыми
+tapes.forEach((tape) => {
+  tape.style.cursor = "grab";
+  tape.addEventListener("mousedown", startDrag);
+  tape.addEventListener("touchstart", startDrag, { passive: false });
+});
+
+function startDrag(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  draggedElement = e.currentTarget;
+  draggedElement.style.cursor = "grabbing";
+
+  // Получаем текущие координаты из CSS
+  const computedStyle = window.getComputedStyle(draggedElement);
+  initialLeft = parseInt(computedStyle.left) || 0;
+  initialTop = parseInt(computedStyle.top) || 0;
+
+  // Координаты курсора
+  const clientX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
+  const clientY = e.type.includes("touch") ? e.touches[0].clientY : e.clientY;
+
+  startX = clientX;
+  startY = clientY;
+
+  // Увеличиваем z-index
+  draggedElement.style.zIndex = "1000";
+
+  // Добавляем обработчики
+  document.addEventListener("mousemove", moveDrag);
+  document.addEventListener("mouseup", endDrag);
+  document.addEventListener("touchmove", moveDrag, { passive: false });
+  document.addEventListener("touchend", endDrag);
+}
+
+function moveDrag(e) {
+  if (!draggedElement) return;
+  e.preventDefault();
+
+  const clientX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
+  const clientY = e.type.includes("touch") ? e.touches[0].clientY : e.clientY;
+
+  // Вычисляем сдвиг
+  const deltaX = clientX - startX;
+  const deltaY = clientY - startY;
+
+  // Новая позиция
+  const newLeft = initialLeft + deltaX;
+  const newTop = initialTop + deltaY;
+
+  // Применяем через style (перебивает CSS)
+  draggedElement.style.left = newLeft + "px";
+  draggedElement.style.top = newTop + "px";
+}
+
+function endDrag(e) {
+  if (!draggedElement) return;
+
+  draggedElement.style.cursor = "grab";
+  draggedElement.style.zIndex = "";
+
+  document.removeEventListener("mousemove", moveDrag);
+  document.removeEventListener("mouseup", endDrag);
+  document.removeEventListener("touchmove", moveDrag);
+  document.removeEventListener("touchend", endDrag);
+
+  draggedElement = null;
+}

@@ -58,14 +58,14 @@
 
   .boxwiththings {
     position: absolute;
-    top: 60vw;
+    top: 65vw;
     z-index: -1;
   }
 
   .box2 {
     width: 45vw;
     z-index: 1;
-    top: 63vw;
+    top: 83vw;
     left: 40vw;
   }
 
@@ -229,12 +229,13 @@
 @media screen and (min-width: 0px) and (max-width: 480px) {
   .name {
     position: absolute;
-    top: -15vw;
+    top: -5vw;
   }
 
   .bigtape {
     position: absolute;
     top: 18vw;
+    width: 120%;
   }
 
   .greetings img {
@@ -283,81 +284,92 @@
   }
   .boxwiththings {
     position: absolute;
-    top: 60vw;
+    top: 70vw;
     z-index: -1;
   }
 
   .box2 {
-    width: 45vw;
+    width: 68vw;
     z-index: 1;
-    top: 65vw;
-    left: 40vw;
+    top: 105vw;
+    left: 19vw;
   }
 
   .shadow {
-    width: 45vw;
+    width: 50vw;
     height: auto;
     position: absolute;
     z-index: 0;
-    top: 100vw;
-    left: 45vw;
+    top: 123vw;
+    left: 30vw;
   }
 
   .boxinfront {
-    width: 30vw;
+    width: 40vw;
     height: auto;
     position: absolute;
     z-index: 5;
-    top: 96vw;
-    left: 46vw;
+    top: 116vw;
+    left: 31vw;
   }
 
   .firstwheel {
-    width: 18vw;
+    width: 28vw;
     height: auto;
     position: absolute;
     z-index: 2;
-    top: 84vw;
-    left: 46vw;
+    top: 99vw;
+    left: 31vw;
   }
   .firstwheel:hover {
     transform: scale(1.2);
-    top: calc(84vw - 7vw);
+    top: calc(99vw - 7vw);
   }
 
   .lamp {
-    width: 18vw;
+    width: 28vw;
     height: auto;
     position: absolute;
     z-index: 4;
-    top: 84vw;
-    left: 55vw;
+    top: 99vw;
+    left: 40vw;
   }
 
   .lamp:hover {
     transform: scale(1.1);
-    top: calc(82vw - 7vw);
+    top: calc(99vw - 7vw);
   }
 
   .printingmachine {
-    width: 30vw;
+    width: 40vw;
     height: auto;
     position: absolute;
     z-index: 3;
-    top: 80vw;
-    left: 55vw;
+    top: 95vw;
+    left: 40vw;
   }
   .printingmachine:hover {
-    top: calc(88vw - 12vw);
+    top: calc(95vw - 10vw);
     transform: scale(1.1);
   }
 
   .paper {
-    width: 30vw;
+    width: 35vw;
     height: auto;
     position: absolute;
+    z-index: 7;
+    top: 125vw;
+    left: 19vw;
+  }
+
+  .eyebackground {
+    position: absolute;
+    top: 170vw;
+  }
+
+  .eyebackground2 {
+    position: absolute;
+    top: 150vw;
     z-index: 3;
-    top: 105vw;
-    left: 7vw;
   }
 }

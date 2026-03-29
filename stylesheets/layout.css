@@ -62,13 +62,12 @@ body {
 
 .tape1 {
   position: absolute;
-
   width: 13vw;
   height: 26vh;
   background-image: url(../img/minitape1.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center; /* Центрирует изображение */
+  background-position: center;
   top: 32vh;
   transition:
     transform 0.2s ease,
@@ -430,7 +429,7 @@ body {
   border: 2px solid rgb(255, 0, 0);
   width: 100%;
   position: absolute;
-  top: 120vh;
+  top: 60vw;
   z-index: -1;
 }
 
@@ -446,10 +445,10 @@ body {
 }
 
 .box2 {
-  height: 80vw;
+  height: 40vw;
   z-index: 3;
   position: absolute;
-  top: 185vh;
+  top: 183vh;
   left: 35vw;
   border: 2px solid rgb(255, 0, 0);
 }
@@ -978,4 +977,32 @@ body {
   position: absolute;
   top: 295vw;
   left: 29vw;
+}
+
+/* Стили для перетаскивания */
+.minitape1,
+.minitape2,
+.minitape3,
+.minitape4,
+.minitape5,
+.minitape6,
+.minitape7,
+.minitape8,
+.minitape9,
+.minitape10,
+.minitape11,
+.minitape12,
+.minitape13,
+.minitape14,
+.minitape15,
+.minitape16 {
+  position: absolute;
+  user-select: none; /* Запрещаем выделение текста */
+  touch-action: none; /* Отключаем стандартные жесты на мобильных */
+}
+
+/* Эффект при приклеивании */
+.attached {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  z-index: 10 !important;
 }
