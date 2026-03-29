@@ -33,15 +33,242 @@ document.addEventListener("mousemove", (event) => {
   movePupil(pupil2, pupil2Img, event);
 });
 
+// // рисование
+// const canvas = document.getElementById("drawingCanvas");
+// const ctx = canvas.getContext("2d");
+// const book = document.querySelector(".book");
+// const penBtn = document.querySelector(".pen");
+// const eraserBtn = document.querySelector(".eraser");
+
+// let isDrawing = false;
+// let currentTool = "pen";
+// let lastX = 0;
+// let lastY = 0;
+
+// const PEN_SIZE = 2;
+// const ERASER_SIZE = 15;
+
+// let points = [];
+
+// const penCursorSvg = `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>`)}`;
+
+// const eraserCursorSvg = `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>`)}`;
+
+// function resizeCanvas() {
+//   const rect = book.getBoundingClientRect();
+//   const dpr = window.devicePixelRatio || 1;
+//   let existingDrawing = null;
+//   if (canvas.width > 0 && canvas.height > 0) {
+//     existingDrawing = ctx.getImageData(0, 0, canvas.width, canvas.height);
+//   }
+//   canvas.width = rect.width * dpr;
+//   canvas.height = rect.height * dpr;
+
+//   ctx.scale(dpr, dpr);
+//   if (existingDrawing) {
+//     ctx.putImageData(existingDrawing, 0, 0);
+//   }
+//   canvas.style.width = rect.width + "px";
+//   canvas.style.height = rect.height + "px";
+//   ctx.lineCap = "round";
+//   ctx.lineJoin = "round";
+// }
+
+// resizeCanvas();
+// window.addEventListener("resize", () => {
+//   clearTimeout(window.resizeTimer);
+//   window.resizeTimer = setTimeout(resizeCanvas, 100);
+// });
+
+// function getCoordinates(e) {
+//   const rect = canvas.getBoundingClientRect();
+//   return {
+//     x: e.clientX - rect.left,
+//     y: e.clientY - rect.top,
+//   };
+// }
+
+// function drawPencilLine(x1, y1, x2, y2) {
+//   const distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+//   const steps = Math.max(1, distance / 2); // Шаг каждые 2 пикселя
+
+//   for (let i = 0; i < steps; i++) {
+//     const t = i / steps;
+//     const x = x1 + (x2 - x1) * t;
+//     const y = y1 + (y2 - y1) * t;
+
+//     for (let j = 0; j < 3; j++) {
+//       const offsetX = (Math.random() - 0.5) * PEN_SIZE * 1.5;
+//       const offsetY = (Math.random() - 0.5) * PEN_SIZE * 1.5;
+//       const size = Math.random() * PEN_SIZE * 0.6 + PEN_SIZE * 0.4;
+//       const opacity = Math.random() * 0.3 + 0.7;
+
+//       ctx.globalAlpha = opacity;
+//       ctx.fillStyle = "#2a2a2a";
+//       ctx.beginPath();
+//       ctx.arc(x + offsetX, y + offsetY, size / 2, 0, Math.PI * 2);
+//       ctx.fill();
+//     }
+//   }
+
+//   ctx.globalAlpha = 1;
+// }
+
+// function drawSmoothLine() {
+//   if (points.length < 2) return;
+
+//   ctx.beginPath();
+//   ctx.moveTo(points[0].x, points[0].y);
+
+//   for (let i = 1; i < points.length - 1; i++) {
+//     const xc = (points[i].x + points[i + 1].x) / 2;
+//     const yc = (points[i].y + points[i + 1].y) / 2;
+//     ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
+//   }
+
+//   if (currentTool === "pen") {
+//     const pathPoints = [];
+//     for (let i = 0; i < points.length - 1; i++) {
+//       drawPencilLine(
+//         points[i].x,
+//         points[i].y,
+//         points[i + 1].x,
+//         points[i + 1].y,
+//       );
+//     }
+//   } else {
+//     ctx.globalCompositeOperation = "destination-out";
+//     ctx.lineWidth = ERASER_SIZE;
+//     ctx.stroke();
+//   }
+// }
+
+// function startDrawing(e) {
+//   isDrawing = true;
+//   const coords = getCoordinates(e);
+//   lastX = coords.x;
+//   lastY = coords.y;
+//   points = [{ x: lastX, y: lastY }];
+
+//   if (currentTool === "pen") {
+//     ctx.globalCompositeOperation = "source-over";
+//     drawPencilLine(lastX, lastY, lastX, lastY);
+//   }
+// }
+
+// function draw(e) {
+//   if (!isDrawing) return;
+
+//   const coords = getCoordinates(e);
+//   points.push({ x: coords.x, y: coords.y });
+
+//   if (points.length > 5) {
+//     points.shift();
+//   }
+
+//   if (currentTool === "pen") {
+//     drawPencilLine(lastX, lastY, coords.x, coords.y);
+//   } else {
+//     ctx.globalCompositeOperation = "destination-out";
+//     ctx.lineWidth = ERASER_SIZE;
+//     ctx.beginPath();
+//     ctx.moveTo(lastX, lastY);
+//     ctx.lineTo(coords.x, coords.y);
+//     ctx.stroke();
+//   }
+
+//   lastX = coords.x;
+//   lastY = coords.y;
+// }
+
+// function stopDrawing() {
+//   isDrawing = false;
+//   points = [];
+// }
+
+// canvas.addEventListener("mousedown", startDrawing);
+// canvas.addEventListener("mousemove", draw);
+// canvas.addEventListener("mouseup", stopDrawing);
+// canvas.addEventListener("mouseleave", stopDrawing);
+
+// canvas.addEventListener("touchstart", (e) => {
+//   e.preventDefault();
+//   const touch = e.touches[0];
+//   const mouseEvent = new MouseEvent("mousedown", {
+//     clientX: touch.clientX,
+//     clientY: touch.clientY,
+//   });
+//   canvas.dispatchEvent(mouseEvent);
+// });
+
+// canvas.addEventListener("touchmove", (e) => {
+//   e.preventDefault();
+//   const touch = e.touches[0];
+//   const mouseEvent = new MouseEvent("mousemove", {
+//     clientX: touch.clientX,
+//     clientY: touch.clientY,
+//   });
+//   canvas.dispatchEvent(mouseEvent);
+// });
+
+// canvas.addEventListener("touchend", () => {
+//   const mouseEvent = new MouseEvent("mouseup", {});
+//   canvas.dispatchEvent(mouseEvent);
+// });
+
+// // Переключение инструментов
+// penBtn.addEventListener("click", () => {
+//   currentTool = "pen";
+//   penBtn.classList.add("active");
+//   eraserBtn.classList.remove("active");
+//   canvas.style.cursor = `url('${penCursorSvg}') 0 24, auto`;
+// });
+
+// eraserBtn.addEventListener("click", () => {
+//   currentTool = "eraser";
+//   eraserBtn.classList.add("active");
+//   penBtn.classList.remove("active");
+//   canvas.style.cursor = `url('${eraserCursorSvg}') 0 24, auto`;
+// });
+
+// eraserBtn.addEventListener("dblclick", () => {
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+// });
+
+// penBtn.classList.add("active");
+// canvas.style.cursor = `url('${penCursorSvg}') 0 24, auto`;
+
+// window.addEventListener(
+//   "keydown",
+//   function (e) {
+//     if ((e.ctrlKey || e.metaKey) && e.keyCode === 83) {
+//       e.preventDefault();
+//       e.stopImmediatePropagation();
+
+//       const link = document.createElement("a");
+//       link.download = "drawing.jpg";
+//       link.href = canvas.toDataURL("image/jpeg", 0.9);
+//       link.click();
+
+//       return false;
+//     }
+//   },
+//   true,
+// );
+
 // рисование
 const canvas = document.getElementById("drawingCanvas");
 const ctx = canvas.getContext("2d");
 const book = document.querySelector(".book");
 const penBtn = document.querySelector(".pen");
 const eraserBtn = document.querySelector(".eraser");
+const colorPicker = document.querySelector(".color"); // ИСПРАВЛЕНО
+const palette = document.querySelector(".palette");
+const colorOptions = document.querySelectorAll(".color-option");
 
 let isDrawing = false;
 let currentTool = "pen";
+let currentColor = "#2a2a2a";
 let lastX = 0;
 let lastY = 0;
 
@@ -50,10 +277,32 @@ const ERASER_SIZE = 15;
 
 let points = [];
 
+// SVG курсоры
 const penCursorSvg = `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>`)}`;
 
 const eraserCursorSvg = `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>`)}`;
 
+// Выбор цвета
+colorOptions.forEach((option) => {
+  option.addEventListener("click", (e) => {
+    currentColor = e.target.dataset.color;
+    currentTool = "pen";
+    penBtn.classList.add("active");
+    eraserBtn.classList.remove("active");
+    canvas.style.cursor = `url('${penCursorSvg}') 0 24, auto`;
+
+    // Подсветка выбранного цвета
+    colorOptions.forEach((opt) => opt.classList.remove("active"));
+    e.target.classList.add("active");
+  });
+});
+
+// Установка первого цвета активным
+if (colorOptions.length > 0) {
+  colorOptions[0].classList.add("active");
+}
+
+// Остальной код без изменений...
 function resizeCanvas() {
   const rect = book.getBoundingClientRect();
   const dpr = window.devicePixelRatio || 1;
@@ -90,7 +339,7 @@ function getCoordinates(e) {
 
 function drawPencilLine(x1, y1, x2, y2) {
   const distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-  const steps = Math.max(1, distance / 2); // Шаг каждые 2 пикселя
+  const steps = Math.max(1, distance / 2);
 
   for (let i = 0; i < steps; i++) {
     const t = i / steps;
@@ -104,7 +353,7 @@ function drawPencilLine(x1, y1, x2, y2) {
       const opacity = Math.random() * 0.3 + 0.7;
 
       ctx.globalAlpha = opacity;
-      ctx.fillStyle = "#2a2a2a";
+      ctx.fillStyle = currentColor;
       ctx.beginPath();
       ctx.arc(x + offsetX, y + offsetY, size / 2, 0, Math.PI * 2);
       ctx.fill();
@@ -112,35 +361,6 @@ function drawPencilLine(x1, y1, x2, y2) {
   }
 
   ctx.globalAlpha = 1;
-}
-
-function drawSmoothLine() {
-  if (points.length < 2) return;
-
-  ctx.beginPath();
-  ctx.moveTo(points[0].x, points[0].y);
-
-  for (let i = 1; i < points.length - 1; i++) {
-    const xc = (points[i].x + points[i + 1].x) / 2;
-    const yc = (points[i].y + points[i + 1].y) / 2;
-    ctx.quadraticCurveTo(points[i].x, points[i].y, xc, yc);
-  }
-
-  if (currentTool === "pen") {
-    const pathPoints = [];
-    for (let i = 0; i < points.length - 1; i++) {
-      drawPencilLine(
-        points[i].x,
-        points[i].y,
-        points[i + 1].x,
-        points[i + 1].y,
-      );
-    }
-  } else {
-    ctx.globalCompositeOperation = "destination-out";
-    ctx.lineWidth = ERASER_SIZE;
-    ctx.stroke();
-  }
 }
 
 function startDrawing(e) {
@@ -238,6 +458,7 @@ eraserBtn.addEventListener("dblclick", () => {
 penBtn.classList.add("active");
 canvas.style.cursor = `url('${penCursorSvg}') 0 24, auto`;
 
+// Сохранение
 window.addEventListener(
   "keydown",
   function (e) {
@@ -255,7 +476,6 @@ window.addEventListener(
   },
   true,
 );
-
 // тут я пытаюсь сделать кликабельным предемты под шкафом
 
 const wardrobe = document.querySelector(".wardrobebackground");

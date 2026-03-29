@@ -7,12 +7,28 @@
 
   body {
     overflow-x: hidden;
-    background-size: 100vw;
     background-repeat: no-repeat;
     background-color: rgba(1, 1, 1, 1);
     position: relative;
   }
+  .drag-message {
+    font-size: 3vw;
+    padding: 3vw 5vw;
+    min-height: 10vw;
+    bottom: 3vw;
+  }
 
+  .cobweb {
+    position: absolute;
+    z-index: 2;
+    top: 0vw;
+    width: 20vw;
+  }
+
+  .cobweb img {
+    width: 100%;
+    height: auto;
+  }
   .name {
     position: absolute;
     top: -5vw;

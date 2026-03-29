@@ -4,10 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <title>ЧЁЗА</title>
+     <link rel="icon" type="image/png" href="img/icon.png">
     <script src="script.js" defer></script>
   </head>
   <body>
      <div class="absolute-container">
+      <!-- паутина -->
+       <div class="cobweb"><img src="img/cobweb.png" alt=""></div>
     <!-- первый блок с приветсвием -->
     <div class="greetings">
       <img src="img/IMG_0512 1.png" alt="boxnemberone" />
@@ -116,7 +119,7 @@
 </div>
 <div class="book">
   <img src="img/book.png" alt="">
-  <canvas id="drawingCanvas"></canvas> <!-- Добавляем canvas поверх книги -->
+  <canvas id="drawingCanvas"></canvas> 
 </div>
 <div class="pen">
   <img src="img/pen.png" alt="">
@@ -124,6 +127,20 @@
 <div class="eraser">
   <img src="img/eraser.png" alt="">
 </div>
+<div class="color">
+  <img src="img/color.png" alt="color">
+  <div class="palette">
+    <div class="color-option" data-color="#2a2a2a" style="background: #2a2a2a;"></div>
+    <div class="color-option" data-color="#ff0000" style="background: #ff0000;"></div>
+    <div class="color-option" data-color="#00ff00" style="background: #00ff00;"></div>
+    <div class="color-option" data-color="#0000ff" style="background: #0000ff;"></div>
+    <div class="color-option" data-color="#ffff00" style="background: #ffff00;"></div>
+    <div class="color-option" data-color="#ff00ff" style="background: #ff00ff;"></div>
+    <div class="color-option" data-color="#00ffff" style="background: #00ffff;"></div>
+    <div class="color-option" data-color="#ffffff" style="background: #ffffff; border: 1px solid #ccc;"></div>
+  </div>
+</div>
+
     <!-- вторая рамка -->
      <div class="border2">
       <img src="img/border2.png" alt="">

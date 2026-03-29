@@ -7,10 +7,13 @@
 }
 body {
   overflow-x: hidden;
-  background-size: 100vw;
+
   background-repeat: no-repeat;
   background-color: rgba(1, 1, 1, 1);
   position: relative;
+  cursor:
+    url("../img/kyrsor.png") 0 0,
+    auto;
 }
 
 .wrapper {
@@ -25,6 +28,11 @@ body {
 .greetings img {
   max-width: 100%;
   height: auto;
+}
+
+.cobweb {
+  position: absolute;
+  z-index: 2;
 }
 
 .name {
@@ -91,7 +99,6 @@ body {
 }
 
 .minitape1:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(3deg) scale(1.02);
 }
@@ -112,7 +119,6 @@ body {
 }
 
 .minitape2:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(-3deg) scale(1.02);
 }
@@ -133,7 +139,6 @@ body {
 }
 
 .minitape3:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(-3deg) scale(1.02);
 }
@@ -155,7 +160,6 @@ body {
 }
 
 .minitape4:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(13deg) scale(1.02);
 }
@@ -177,7 +181,6 @@ body {
 }
 
 .minitape5:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(37deg) scale(1.02);
 }
@@ -198,7 +201,9 @@ body {
 }
 
 .minitape6:active {
-  cursor: grabbing;
+  cursor:
+    url("../img/kyrsor.png") 0 0,
+    auto;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(3deg) scale(1.02);
 }
@@ -220,7 +225,9 @@ body {
 }
 
 .minitape7:active {
-  cursor: grabbing;
+  cursor:
+    url("../img/kyrsor.png") 0 0,
+    auto;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(3deg) scale(1.02);
 }
@@ -272,8 +279,8 @@ body {
 }
 
 .minitape10 {
-  top: 20vh;
-  left: 70vw;
+  top: 50vh;
+  left: 90vw;
   z-index: 3;
   transform: rotate(315deg);
   position: absolute;
@@ -317,6 +324,7 @@ body {
 }
 
 .minitape12 {
+  width: 70vw;
   top: 23vh;
   left: 87vw;
   z-index: 3;
@@ -326,7 +334,7 @@ body {
 
 .minitape12 img {
   max-width: 100%;
-  max-height: 100%;
+
   object-fit: contain;
   display: block;
   width: 11vw;
@@ -340,18 +348,18 @@ body {
 }
 
 .minitape13 {
-  top: 30vh;
+  top: 50vh;
   left: 1vw;
   z-index: 3;
   transform: rotate(-4deg);
   position: absolute;
+  width: 15vw;
+  height: 20vw;
 }
 
 .minitape13 img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
+  max-width: 120%;
+  height: 80%;
   width: 6vw;
 }
 .minitape13:active {
@@ -700,8 +708,8 @@ body {
   width: 23vw;
   position: absolute;
 
-  top: 216vw;
-  left: 60vw;
+  top: 226vw;
+  left: 50vw;
 }
 
 .pen img {
@@ -722,6 +730,53 @@ body {
   height: auto;
 }
 
+.color {
+  width: 25vw;
+  position: absolute;
+  top: 210vw;
+  left: 70vw;
+}
+
+.color img {
+  max-width: 100%;
+  height: auto;
+}
+
+.palette {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+  z-index: 100;
+}
+
+.color:hover .palette {
+  transform: translateX(-50%) scale(1);
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color-option:hover {
+  transform: scale(1.2);
+}
+
+.color-option.active {
+  box-shadow: 0 0 0 3px #000;
+}
 /* <!-- вторая рамка --> */
 .border2 {
   position: absolute;
@@ -905,47 +960,44 @@ body {
   }
 }
 
-/* Сообщение при drag & drop */
+@font-face {
+  font-family: "Schist";
+  src: url("../fonts/Schist-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
 .drag-message {
   position: fixed;
-  bottom: 20px;
+  bottom: 2vw;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 16px;
+  background-image: url(../img/win.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 20vw;
+  max-width: 90vw;
+  padding: 2vw 4vw;
+  color: rgba(13, 13, 13, 1);
+  font-family: "Schist", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.4vw;
+  text-align: center;
   z-index: 1000;
   display: none;
   pointer-events: none;
-  white-space: nowrap;
+  height: auto;
+  min-height: 6vw;
 }
 
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(20px);
-  }
-  15% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  85% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(-20px);
-  }
+.drag-message.show {
+  display: block;
 }
-
 .hair,
 .hair2,
 .baghse,
 .bookk {
-  cursor: grab;
   transition: all 0.1s ease;
 }
 
@@ -953,7 +1005,6 @@ body {
 .hair2:active,
 .baghse:active,
 .bookk:active {
-  cursor: grabbing;
 }
 
 /* подвал */
@@ -997,11 +1048,10 @@ body {
 .minitape15,
 .minitape16 {
   position: absolute;
-  user-select: none; /* Запрещаем выделение текста */
-  touch-action: none; /* Отключаем стандартные жесты на мобильных */
+  user-select: none;
+  touch-action: none;
 }
 
-/* Эффект при приклеивании */
 .attached {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
   z-index: 10 !important;
