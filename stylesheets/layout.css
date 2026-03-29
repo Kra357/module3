@@ -595,6 +595,108 @@ body {
     transform: translateY(0px);
   }
 }
+.aboutlamp {
+  width: 55vw;
+}
+.aboutlamp img {
+  max-width: 100%;
+  height: auto;
+}
+
+.aboutwheel {
+  width: 55vw;
+}
+.aboutwheel img {
+  max-width: 100%;
+  height: auto;
+}
+
+.aboutprint img {
+  max-width: 100%;
+  height: auto;
+}
+.aboutprint {
+  width: 55vw;
+}
+
+/* Затемнение фона */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Модальные окна */
+.aboutlamp,
+.aboutwheel,
+.aboutprint {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 55vw;
+  z-index: 101;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+.aboutlamp.show,
+.aboutwheel.show,
+.aboutprint.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Кнопка закрытия */
+.close-btn {
+  position: absolute;
+  top: -2vw;
+  right: -2vw;
+  width: 4vw;
+  height: 4vw;
+  background: rgba(184, 135, 91, 1);
+  border: 0.2vw solid rgba(151, 110, 74, 1);
+  border-radius: 50%;
+  color: white;
+  font-size: 2vw;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Картинки в модалках */
+.aboutlamp img,
+.aboutwheel img,
+.aboutprint img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 /* секция с глазами */
 
@@ -749,11 +851,12 @@ body {
   transform: translateX(-50%) scale(0);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  gap: 0.5vw;
+  padding: 1vw;
+  background: rgba(184, 135, 91, 1);
+  border: 0.2vw solid rgba(151, 110, 74, 1);
+  border-radius: 1vw;
+  box-shadow: 0 0.4vw 2vw rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease;
   z-index: 100;
 }
@@ -943,19 +1046,10 @@ body {
 @keyframes appear {
   0% {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.2);
   }
   100% {
     opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes return {
-  0% {
-    transform: scale(1.1);
-  }
-  100% {
     transform: scale(1);
   }
 }
@@ -982,13 +1076,16 @@ body {
   color: rgba(13, 13, 13, 1);
   font-family: "Schist", Arial, sans-serif;
   font-weight: 300;
-  font-size: 1.4vw;
+  font-size: 1.2vw;
   text-align: center;
   z-index: 1000;
   display: none;
   pointer-events: none;
   height: auto;
   min-height: 6vw;
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
 }
 
 .drag-message.show {
