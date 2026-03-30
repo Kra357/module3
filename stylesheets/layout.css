@@ -48,7 +48,7 @@ body {
   background-repeat: no-repeat;
   background-image: url(../img/name.png);
   background-size: contain;
-  background-position: center; /* Центрирует изображение */
+  background-position: center;
   top: -7vw;
   left: 10vw;
 }
