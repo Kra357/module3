@@ -487,7 +487,7 @@ body {
 }
 
 .boxinfront {
-  height: 54vh;
+  height: 26vw;
   object-fit: contain;
   position: absolute;
   top: 203vh;
@@ -501,7 +501,7 @@ body {
 }
 
 .firstwheel {
-  height: 50vh;
+  height: 25vw;
   object-fit: contain;
   position: absolute;
   top: 171vh;
@@ -531,7 +531,7 @@ body {
 }
 
 .lamp {
-  height: 70vh;
+  height: 35vw;
   object-fit: contain;
   position: absolute;
   top: 157vh;
@@ -552,7 +552,7 @@ body {
 }
 
 .printingmachine {
-  height: 65vh;
+  height: 32vw;
   object-fit: contain;
   position: absolute;
   top: 160vh;
@@ -574,7 +574,7 @@ body {
 }
 
 .paper {
-  height: 40vh;
+  height: 20vw;
   object-fit: contain;
   position: absolute;
   top: 220vh;
