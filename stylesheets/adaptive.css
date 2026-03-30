@@ -1,8 +1,14 @@
 @media screen and (min-width: 481px) and (max-width: 1279px) {
   * {
     box-sizing: border-box;
-    margin: 0 auto;
-    padding: 0 auto;
+    margin: 0;
+    padding: 0;
+  }
+  .fix {
+    position: relative;
+    width: 100%;
+    height: 300vw;
+    overflow: hidden;
   }
 
   body {
@@ -61,10 +67,12 @@
   .minitape11,
   .minitape12,
   .minitape13,
-  .minitape15,
-  .minitape16 {
+  .minitape15 {
     position: absolute;
     top: 15vw;
+  }
+  .minitape16 {
+    display: none;
   }
 
   .minitape14 {
@@ -214,7 +222,7 @@
   }
   .final {
     position: absolute;
-    top: 295vw;
+    top: 287.5vw;
   }
 
   .final img {
@@ -276,9 +284,28 @@
 }
 
 @media screen and (min-width: 0px) and (max-width: 480px) {
+  .fix {
+    position: relative;
+    width: 100%;
+    height: 400vw;
+    overflow: hidden;
+  }
   .name {
+    width: 90vw;
     position: absolute;
     top: -5vw;
+    left: -3vw;
+  }
+  .cobweb {
+    position: absolute;
+    z-index: 2;
+    top: 0vw;
+    width: 20vw;
+  }
+
+  .cobweb img {
+    width: 100%;
+    height: auto;
   }
 
   .bigtape {
@@ -300,8 +327,16 @@
   }
 
   .minitape1 {
+    width: 60vw;
     position: absolute;
-    top: 16vw;
+    top: 50vw;
+  }
+
+  .minitape1 img {
+    object-fit: contain;
+    display: block;
+    height: auto;
+    width: 17vw;
   }
 
   .minitape13,
@@ -311,26 +346,53 @@
   .minitape3,
   .minitape2,
   .minitape8 {
+    display: none;
+  }
+
+  .minitape13,
+  .minitape15 {
     position: absolute;
     top: 15vw;
+  }
+
+  .minitape12 img,
+  .minitape13 img,
+  .minitape15 img,
+  .minitape16 img {
+    object-fit: contain;
+    display: block;
+    height: auto;
+    width: 17vw;
+  }
+  .minitape12 {
+    left: 80vw;
+  }
+
+  .minitape16 {
+    position: absolute;
+    left: 80vw;
+    top: 20vw;
   }
 
   .minitape7,
   .minitape9,
   .minitape10,
-  .minitape11,
-  .minitape12,
-  .minitape13,
-  .minitape15,
-  .minitape16 {
-    position: absolute;
-    top: 15vw;
+  .minitape11 {
+    display: none;
   }
 
   .minitape14 {
     position: absolute;
     top: 20vw;
   }
+
+  .minitape14 img {
+    object-fit: contain;
+    display: block;
+    height: auto;
+    width: 17vw;
+  }
+
   .boxwiththings {
     position: absolute;
     top: 70vw;
@@ -483,7 +545,7 @@
   }
   .final {
     position: absolute;
-    top: 295vw;
+    top: 286vw;
   }
 
   .final img {
@@ -516,30 +578,66 @@
     width: 100%;
     height: auto;
   }
-  .drag-message {
+  .aboutlamp,
+  .aboutwheel,
+  .aboutprint {
     position: fixed;
-    bottom: 2vw;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    background-image: url(../img/win.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-width: 20vw;
-    max-width: 90vw;
-    padding: 2vw 4vw;
-    color: rgba(13, 13, 13, 1);
-    font-family: "Schist", Arial, sans-serif;
-    font-weight: 300;
-    font-size: 1.2vw;
-    text-align: center;
-    z-index: 10;
-    display: none;
-    pointer-events: none;
-    height: auto;
-    min-height: 6vw;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 85vw;
+    z-index: 101;
+    opacity: 0;
+    visibility: hidden;
     transition:
-      opacity 0.5s ease-in-out,
-      visibility 0.5s ease-in-out;
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .aboutlamp.show,
+  .aboutwheel.show,
+  .aboutprint.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .close-btn {
+    position: absolute;
+    top: -2vw;
+    right: -2vw;
+    width: 10vw;
+    height: 5vw;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+
+  .close-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .close-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .close-btn:active {
+    transform: scale(0.95);
+  }
+
+  .aboutlamp img,
+  .aboutwheel img,
+  .aboutprint img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }

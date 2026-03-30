@@ -2,9 +2,16 @@
 
 * {
   box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0 auto;
+  margin: 0;
+  padding: 0;
 }
+.fix {
+  position: relative;
+  width: 100%;
+  height: 310vw;
+  overflow: hidden;
+}
+
 body {
   overflow-x: hidden;
 
@@ -14,6 +21,7 @@ body {
   cursor:
     url("../img/kyrsor.png") 0 0,
     auto;
+  min-height: 100vh;
 }
 
 .wrapper {
@@ -22,8 +30,6 @@ body {
 }
 
 /* секция с приветсвием */
-.greetings {
-}
 
 .greetings img {
   max-width: 100%;
