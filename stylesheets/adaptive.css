@@ -112,20 +112,20 @@
   }
 
   .firstwheel {
-    width: 18vw;
-
+    height: 20vw;
     position: absolute;
     z-index: 2;
     top: 84vw;
     left: 46vw;
   }
+
   .firstwheel:hover {
     transform: scale(1.2);
     top: calc(84vw - 7vw);
   }
 
   .lamp {
-    width: 18vw;
+    height: 35vw;
 
     position: absolute;
     z-index: 4;
@@ -139,12 +139,13 @@
   }
 
   .printingmachine {
-    width: 30vw;
-
+    height: 25vw;
     position: absolute;
     z-index: 3;
     top: 80vw;
     left: 55vw;
+
+    position: absolute;
   }
   .printingmachine:hover {
     top: calc(88vw - 12vw);
@@ -152,8 +153,7 @@
   }
 
   .paper {
-    width: 30vw;
-
+    height: 20vw;
     position: absolute;
     z-index: 3;
     top: 105vw;
@@ -416,8 +416,7 @@
   }
 
   .boxinfront {
-    width: 40vw;
-    height: auto;
+    height: 26vw;
     position: absolute;
     z-index: 5;
     top: 116vw;
@@ -425,8 +424,7 @@
   }
 
   .firstwheel {
-    width: 28vw;
-    height: auto;
+    height: 25vw;
     position: absolute;
     z-index: 2;
     top: 99vw;
@@ -438,8 +436,7 @@
   }
 
   .lamp {
-    width: 28vw;
-    height: auto;
+    height: 35vw;
     position: absolute;
     z-index: 4;
     top: 99vw;
@@ -452,8 +449,7 @@
   }
 
   .printingmachine {
-    width: 40vw;
-    height: auto;
+    height: 32vw;
     position: absolute;
     z-index: 3;
     top: 95vw;
@@ -465,8 +461,7 @@
   }
 
   .paper {
-    width: 35vw;
-    height: auto;
+    height: 24vw;
     position: absolute;
     z-index: 7;
     top: 125vw;
