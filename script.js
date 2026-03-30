@@ -39,7 +39,7 @@ const ctx = canvas.getContext("2d");
 const book = document.querySelector(".book");
 const penBtn = document.querySelector(".pen");
 const eraserBtn = document.querySelector(".eraser");
-const colorPicker = document.querySelector(".color"); // ИСПРАВЛЕНО
+const colorPicker = document.querySelector(".color");
 const palette = document.querySelector(".palette");
 const colorOptions = document.querySelectorAll(".color-option");
 
@@ -246,36 +246,6 @@ window.addEventListener(
   true,
 );
 
-const wardrobe = document.querySelector(".wardrobebackground");
-const closedoor = document.querySelector(".closedoor");
-const items = document.querySelectorAll(".men, .baghse, .hair, .hair2, .bookk");
-
-let closeTimeout;
-
-closedoor.addEventListener("mouseenter", () => {
-  wardrobe.classList.add("door-open");
-});
-
-function scheduleClose() {
-  clearTimeout(closeTimeout);
-  closeTimeout = setTimeout(() => {
-    wardrobe.classList.remove("door-open");
-  }, 50);
-}
-
-function cancelClose() {
-  clearTimeout(closeTimeout);
-}
-
-closedoor.addEventListener("mouseleave", scheduleClose);
-
-items.forEach((item) => {
-  item.addEventListener("mouseenter", cancelClose);
-  item.addEventListener("mouseleave", scheduleClose);
-});
-
-wardrobe.addEventListener("mouseleave", scheduleClose);
-
 document.addEventListener("DOMContentLoaded", function () {
   const wardrobe = document.querySelector(".wardrobebackground");
   const men = document.querySelector(".men");
@@ -286,6 +256,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const hair = document.querySelector(".hair");
   const hair2 = document.querySelector(".hair2");
   const bookk = document.querySelector(".bookk");
+
+  const resetBtn = document.querySelector(".reset-btn");
 
   memwithhair.style.display = "none";
   mangirl.style.display = "none";
@@ -368,47 +340,56 @@ document.addEventListener("DOMContentLoaded", function () {
   function stopDrag(e) {
     if (!draggedItem) return;
 
-    const menRect = men.getBoundingClientRect();
+    let currentCharacter = men;
+    if (memwithhair.style.display === "block") {
+      currentCharacter = memwithhair;
+    } else if (mangirl.style.display === "block") {
+      currentCharacter = mangirl;
+    } else if (manhse.style.display === "block") {
+      currentCharacter = manhse;
+    }
+
+    const characterRect = currentCharacter.getBoundingClientRect();
     const draggedRect = draggedItem.getBoundingClientRect();
 
-    const isOverMen = !(
-      draggedRect.right < menRect.left ||
-      draggedRect.left > menRect.right ||
-      draggedRect.bottom < menRect.top ||
-      draggedRect.top > menRect.bottom
+    const isOverCharacter = !(
+      draggedRect.right < characterRect.left ||
+      draggedRect.left > characterRect.right ||
+      draggedRect.bottom < characterRect.top ||
+      draggedRect.top > characterRect.bottom
     );
 
-    if (isOverMen) {
-      if (draggedItem === hair) {
+    if (isOverCharacter) {
+      if (draggedItem === hair && currentCharacter === men) {
         men.style.display = "none";
         memwithhair.style.display = "block";
         showMessage(
-          "Знакомтесь! Это ученый срендневековья. Его сожгли на костре за асбсурдные идеи.",
+          "Знакомтесь! Это ученый средневековья. Его сожгли на костре за абсурдные идеи.",
         );
-      } else if (draggedItem === hair2) {
+      } else if (draggedItem === hair2 && currentCharacter === men) {
         men.style.display = "none";
         mangirl.style.display = "block";
         showMessage(
           "Знакомьтесь! Это Мария Анна Моцарт! Общество не приняло её абсурдную идею занятии музыкой, поэтому её выдали замуж.",
         );
-      } else if (draggedItem === baghse) {
-        // Меняем на manhse
+      } else if (draggedItem === baghse && currentCharacter === men) {
         men.style.display = "none";
         manhse.style.display = "block";
         showMessage(
           "Знакомьтесь! Это студент школы дизайна. Он очень хочет 10, но школа дизайна считает это абсурдным, поэтому ставит только 8.",
         );
+      } else {
+        showMessage("Этот предмет не подходит для этого персонажа!");
       }
 
-      // Анимация появления нового персонажа
       const newChar =
-        men.style.display === "none"
-          ? memwithhair.style.display === "block"
-            ? memwithhair
-            : mangirl.style.display === "block"
-              ? mangirl
-              : manhse
-          : null;
+        memwithhair.style.display === "block"
+          ? memwithhair
+          : mangirl.style.display === "block"
+            ? mangirl
+            : manhse.style.display === "block"
+              ? manhse
+              : null;
 
       if (newChar) {
         newChar.style.animation = "appear 0.3s ease";
@@ -417,28 +398,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 300);
       }
 
-      // Возвращаем перетащенный предмет на место с анимацией
       resetItemPosition(draggedItem);
     } else {
-      // Если не на персонажа, просто возвращаем на место
       resetItemPosition(draggedItem);
     }
 
-    // Убираем стили
     draggedItem.style.cursor = "";
     draggedItem.style.zIndex = "";
     draggedItem = null;
 
-    // Удаляем обработчики
     document.removeEventListener("mousemove", onDrag);
     document.removeEventListener("mouseup", stopDrag);
     document.removeEventListener("touchmove", onDrag);
     document.removeEventListener("touchend", stopDrag);
   }
 
-  // Функция возврата предмета на место
   function resetItemPosition(item) {
-    // Сохраняем исходные позиции
     const originalPositions = {
       hair: { left: "55vw", top: "46vh" },
       hair2: { left: "46vw", top: "3.5vw" },
@@ -452,16 +427,13 @@ document.addEventListener("DOMContentLoaded", function () {
       item.style.top = pos.top;
     }
 
-    // Добавляем анимацию возврата
     item.style.animation = "return 0.3s ease";
     setTimeout(() => {
       item.style.animation = "";
     }, 300);
   }
 
-  // Функция показа сообщения
   function showMessage(text) {
-    // Создаем или получаем элемент сообщения
     let message = document.querySelector(".drag-message");
     if (!message) {
       message = document.createElement("div");
@@ -478,7 +450,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 10000);
   }
 
-  // Добавляем обработчики для перетаскивания
+  function resetCharacter() {
+    men.style.display = "block";
+    memwithhair.style.display = "none";
+    mangirl.style.display = "none";
+    manhse.style.display = "none";
+
+    showMessage(
+      "Персонаж очищен! Теперь вы можете посмотреть на другого отвергнутого гения.",
+    );
+
+    men.style.animation = "appear 0.3s ease";
+    setTimeout(() => {
+      men.style.animation = "";
+    }, 300);
+  }
+
   hair.addEventListener("mousedown", startDrag);
   hair.addEventListener("touchstart", startDrag);
   hair2.addEventListener("mousedown", startDrag);
@@ -488,25 +475,15 @@ document.addEventListener("DOMContentLoaded", function () {
   bookk.addEventListener("mousedown", startDrag);
   bookk.addEventListener("touchstart", startDrag);
 
-  // Кнопка сброса (добавьте в HTML если нужно)
-  window.resetWardrobe = function () {
-    // Сбрасываем персонажа
-    men.style.display = "block";
-    memwithhair.style.display = "none";
-    mangirl.style.display = "none";
-    manhse.style.display = "none";
-
-    // Сбрасываем позиции предметов
-    resetItemPosition(hair);
-    resetItemPosition(hair2);
-    resetItemPosition(baghse);
-    resetItemPosition(bookk);
-
-    showMessage("Все сброшено!");
-  };
+  if (resetBtn) {
+    resetBtn.addEventListener("click", resetCharacter);
+    resetBtn.style.cursor = "pointer";
+    resetBtn.style.pointerEvents = "auto";
+  } else {
+    console.warn("Кнопка с классом .reset-btn не найдена в DOM");
+  }
 });
 
-// Простой drag & drop для всех minitape
 const tapes = document.querySelectorAll('[class^="minitape"]');
 
 let draggedElement = null;
@@ -515,7 +492,6 @@ let startY = 0;
 let initialLeft = 0;
 let initialTop = 0;
 
-// Делаем все скотчи перетаскиваемыми
 tapes.forEach((tape) => {
   tape.style.cursor = "grab";
   tape.addEventListener("mousedown", startDrag);
@@ -529,22 +505,18 @@ function startDrag(e) {
   draggedElement = e.currentTarget;
   draggedElement.style.cursor = "grabbing";
 
-  // Получаем текущие координаты из CSS
   const computedStyle = window.getComputedStyle(draggedElement);
   initialLeft = parseInt(computedStyle.left) || 0;
   initialTop = parseInt(computedStyle.top) || 0;
 
-  // Координаты курсора
   const clientX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
   const clientY = e.type.includes("touch") ? e.touches[0].clientY : e.clientY;
 
   startX = clientX;
   startY = clientY;
 
-  // Увеличиваем z-index
   draggedElement.style.zIndex = "1000";
 
-  // Добавляем обработчики
   document.addEventListener("mousemove", moveDrag);
   document.addEventListener("mouseup", endDrag);
   document.addEventListener("touchmove", moveDrag, { passive: false });
@@ -558,15 +530,12 @@ function moveDrag(e) {
   const clientX = e.type.includes("touch") ? e.touches[0].clientX : e.clientX;
   const clientY = e.type.includes("touch") ? e.touches[0].clientY : e.clientY;
 
-  // Вычисляем сдвиг
   const deltaX = clientX - startX;
   const deltaY = clientY - startY;
 
-  // Новая позиция
   const newLeft = initialLeft + deltaX;
   const newTop = initialTop + deltaY;
 
-  // Применяем через style (перебивает CSS)
   draggedElement.style.left = newLeft + "px";
   draggedElement.style.top = newTop + "px";
 }
@@ -585,7 +554,6 @@ function endDrag(e) {
   draggedElement = null;
 }
 
-// Получаем элементы
 const lamp = document.querySelector(".lamp");
 const firstwheel = document.querySelector(".firstwheel");
 const printingmachine = document.querySelector(".printingmachine");
@@ -597,13 +565,11 @@ const aboutprint = document.querySelector(".aboutprint");
 const overlay = document.querySelector(".overlay");
 const closeBtns = document.querySelectorAll(".close-btn");
 
-// Функция открытия модалки
 function openModal(modal) {
   overlay.classList.add("show");
   modal.classList.add("show");
 }
 
-// Функция закрытия всех модалок
 function closeAllModals() {
   overlay.classList.remove("show");
   aboutlamp.classList.remove("show");
@@ -611,12 +577,10 @@ function closeAllModals() {
   aboutprint.classList.remove("show");
 }
 
-// Клики на предметы
 lamp.addEventListener("click", () => openModal(aboutlamp));
 firstwheel.addEventListener("click", () => openModal(aboutwheel));
 printingmachine.addEventListener("click", () => openModal(aboutprint));
 
-// Клики на кнопки закрытия
 closeBtns.forEach((btn) => {
   btn.addEventListener("click", closeAllModals);
 });

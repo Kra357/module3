@@ -7,7 +7,7 @@
   .fix {
     position: relative;
     width: 100%;
-    height: 300vw;
+    height: 306vw;
     overflow: hidden;
   }
 
@@ -38,7 +38,7 @@
   .name {
     width: 84vw;
     position: absolute;
-    left: 10vw;
+    left: 8vw;
   }
 
   .bigtape {
@@ -51,7 +51,14 @@
     top: 16vw;
   }
 
-  .minitape13,
+  .minitape1 img {
+    display: block;
+    object-fit: contain;
+    left: 76vw;
+    top: 60vw;
+    width: 14vw;
+  }
+
   .minitape4,
   .minitape5,
   .minitape6,
@@ -60,25 +67,107 @@
   .minitape8 {
     position: absolute;
     top: 15vw;
+    width: 26vw;
   }
 
-  .minitape7,
-  .minitape9,
-  .minitape10,
-  .minitape11,
-  .minitape12,
-  .minitape13,
-  .minitape15 {
+  .minitape13 {
+    position: absolute;
+    top: 40vwvw;
+  }
+
+  .minitape13 img {
+    display: block;
+    object-fit: contain;
+    width: 20vw;
+  }
+  .minitape4 img {
+    display: block;
+    object-fit: contain;
+    width: 18vw;
+  }
+  .minitape5 img {
+    display: block;
+    object-fit: contain;
+    width: 20vw;
+  }
+  .minitape6 img {
+    display: block;
+    object-fit: contain;
+    width: 14vw;
+  }
+
+  .minitape6 {
+  }
+  .minitape3 img {
+    display: block;
+    object-fit: contain;
+    width: 14vw;
+  }
+  .minitape2 img {
+    display: block;
+    object-fit: contain;
+    width: 14vw;
+  }
+  .minitape8 {
     position: absolute;
     top: 15vw;
+    width: 26vw;
+  }
+
+  .minitape7 img {
+    display: block;
+    object-fit: contain;
+    width: 8vw;
+  }
+  .minitape9 img {
+    display: block;
+    object-fit: contain;
+    width: 10vw;
+  }
+
+  .minitape9 {
+    position: absolute;
+    left: 90vw;
+    top: 35vw;
+  }
+
+  .minitape10 img {
+    display: none;
+  }
+  .minitape11 {
+    display: none;
+  }
+
+  .minitape12 {
+    position: absolute;
+    left: 80vw;
+    top: 3vw;
+  }
+  .minitape12 img {
+    object-fit: contain;
+    width: 17vw;
+    top: 20vw;
+  }
+  .minitape13 {
+    object-fit: contain;
+    width: 17vw;
+    top: 35vw;
+    left: -3vw;
+  }
+
+  .minitape15 img {
+    object-fit: contain;
+    width: 14vw;
+    top: 16vw;
   }
   .minitape16 {
     display: none;
   }
 
-  .minitape14 {
-    position: absolute;
-    top: 20vw;
+  .minitape14 img {
+    object-fit: contain;
+    width: 14vw;
+    top: 30vw;
   }
 
   .boxwiththings {
@@ -88,59 +177,88 @@
   }
 
   .box2 {
-    width: 45vw;
+    width: 60vw;
     z-index: 1;
-    top: 83vw;
+    top: 93vw;
     left: 40vw;
   }
 
   .shadow {
-    width: 45vw;
+    width: 60vw;
     height: auto;
     position: absolute;
     z-index: 0;
-    top: 100vw;
+    top: 110vw;
     left: 45vw;
   }
 
   .boxinfront {
-    width: 30vw;
+    width: 41.5vw;
     height: auto;
     position: absolute;
     z-index: 5;
-    top: 96vw;
-    left: 46vw;
+    top: 104vw;
+    left: 46.5vw;
   }
 
   .firstwheel {
-    height: 20vw;
+    height: 28vw;
     position: absolute;
     z-index: 2;
-    top: 84vw;
+    top: 90vw;
     left: 46vw;
   }
 
   .firstwheel:hover {
     transform: scale(1.2);
-    top: calc(84vw - 7vw);
+    top: calc(90vw - 7vw);
   }
 
   .lamp {
-    height: 28vw;
+    height: 35vw;
 
     position: absolute;
     z-index: 4;
-    top: 81vw;
+    top: 84vw;
     left: 53vw;
+  }
+  .desk {
+    transform: rotate(90deg);
+    width: 150vw;
+    top: 174.5vw;
+    left: -25vw;
+    z-index: -1;
+  }
+
+  .book {
+    width: 80vw;
+    top: 155vw;
+    left: -4vw;
+  }
+
+  .pen {
+    width: 35vw;
+    top: 220vw;
+    left: 10vw;
+  }
+
+  .eraser {
+    width: 20vw;
+    top: 190vw;
+  }
+
+  .color {
+    width: 30vw;
+    left: 60vw;
   }
 
   .lamp:hover {
     transform: scale(1.1);
-    top: calc(82vw - 7vw);
+    top: calc(84vw - 7vw);
   }
 
   .printingmachine {
-    height: 25vw;
+    height: 38vw;
     position: absolute;
     z-index: 3;
     top: 80vw;
@@ -149,36 +267,32 @@
     position: absolute;
   }
   .printingmachine:hover {
-    top: calc(88vw - 12vw);
+    top: calc(80vw - 12vw);
     transform: scale(1.1);
   }
 
   .paper {
-    height: 20vw;
+    height: 28vw;
     position: absolute;
-    z-index: 3;
-    top: 105vw;
-    left: 7vw;
+    z-index: 6;
+    top: 110vw;
+    left: 3vw;
   }
 
   .pupil1 {
-    width: 40vw;
-    height: auto;
-    position: absolute;
-    z-index: 2;
-    top: 158vw;
-    left: 7vw;
+    display: none;
   }
 
   .pupil2 {
-    width: 40vw;
-    height: auto;
-    position: absolute;
-    z-index: 2;
-    top: 157vw;
-    left: 47%;
+    display: none;
+  }
+  .eyebackground {
+    display: none;
   }
 
+  .eyebackground2 {
+    display: none;
+  }
   .border2 {
     width: 50vw;
     top: 45.69%;
@@ -223,7 +337,8 @@
   }
   .final {
     position: absolute;
-    top: 287.5vw;
+    top: 289vw;
+    z-index:;
   }
 
   .final img {
@@ -244,13 +359,20 @@
     left: 25vw;
   }
 
+  .border {
+    position: absolute;
+    top: 147vw;
+    width: 140vw;
+    left: -9vw;
+  }
+
   .border2 {
-    top: 240vw;
+    top: 239.5vw;
   }
   .names {
-    width: 40vw;
+    width: 50vw;
     position: absolute;
-    top: 297vw;
+    top: 290vw;
   }
   .names img {
     width: 100%;
@@ -281,6 +403,14 @@
     transition:
       opacity 0.5s ease-in-out,
       visibility 0.5s ease-in-out;
+  }
+  .aboutlamp,
+  .aboutwheel,
+  .aboutprint {
+    width: 92vw;
+  }
+  .close-btn {
+    width: 10vw;
   }
 }
 

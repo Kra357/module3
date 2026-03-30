@@ -43,14 +43,14 @@ body {
 
 .name {
   position: absolute;
-  width: 60vw;
+  width: 80vw;
   height: 30vw;
   background-repeat: no-repeat;
   background-image: url(../img/name.png);
   background-size: contain;
   background-position: center; /* Центрирует изображение */
   top: -7vw;
-  left: 20vw;
+  left: 10vw;
 }
 
 /* промежуточный блок */
@@ -66,7 +66,6 @@ body {
 
 /* секция со скотчем */
 .box {
-  border: 2px solid rgb(255, 0, 0);
 }
 
 .box img {
@@ -256,7 +255,6 @@ body {
 }
 
 .minitape8:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(3deg) scale(1.02);
 }
@@ -279,7 +277,6 @@ body {
 }
 
 .minitape9:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(17deg) scale(1.02);
 }
@@ -301,7 +298,6 @@ body {
 }
 
 .minitape10:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(318deg) scale(1.02);
 }
@@ -324,7 +320,6 @@ body {
 }
 
 .minitape11:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(-7deg) scale(1.02);
 }
@@ -348,7 +343,6 @@ body {
 }
 
 .minitape12:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(-17deg) scale(1.02);
 }
@@ -369,7 +363,6 @@ body {
   width: 6vw;
 }
 .minitape13:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(1deg) scale(1.02);
 }
@@ -390,7 +383,6 @@ body {
 }
 
 .minitape14:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(10deg) scale(1.02);
 }
@@ -411,7 +403,6 @@ body {
   width: 8vw;
 }
 .minitape15:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(-20deg) scale(1.02);
 }
@@ -432,7 +423,6 @@ body {
 }
 
 .minitape16:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(-317deg) scale(1.02);
 }
@@ -440,7 +430,6 @@ body {
 /* <!-- cекция с изучением предметов --> */
 
 .boxwiththings {
-  border: 2px solid rgb(255, 0, 0);
   width: 100%;
   position: absolute;
   top: 60vw;
@@ -957,7 +946,6 @@ body {
 }
 
 .baghse:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(10deg) scale(1.02);
 }
@@ -974,7 +962,6 @@ body {
   top: 46vh;
 }
 .hair:active {
-  cursor: grabbing;
   filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.2));
   transform: rotate(10deg) scale(1.02);
 }
@@ -1085,7 +1072,7 @@ body {
   color: rgba(13, 13, 13, 1);
   font-family: "Schist", Arial, sans-serif;
   font-weight: 300;
-  font-size: 1.2vw;
+  font-size: 1.5vw;
   text-align: center;
   z-index: 1000;
   display: none;
