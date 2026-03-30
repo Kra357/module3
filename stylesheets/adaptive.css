@@ -113,7 +113,7 @@
 
   .firstwheel {
     width: 18vw;
-    height: auto;
+
     position: absolute;
     z-index: 2;
     top: 84vw;
@@ -126,7 +126,7 @@
 
   .lamp {
     width: 18vw;
-    height: auto;
+
     position: absolute;
     z-index: 4;
     top: 84vw;
@@ -140,7 +140,7 @@
 
   .printingmachine {
     width: 30vw;
-    height: auto;
+
     position: absolute;
     z-index: 3;
     top: 80vw;
@@ -153,7 +153,7 @@
 
   .paper {
     width: 30vw;
-    height: auto;
+
     position: absolute;
     z-index: 3;
     top: 105vw;
