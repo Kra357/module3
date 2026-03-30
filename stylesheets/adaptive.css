@@ -212,13 +212,11 @@
   .opendoor {
     top: -11%;
   }
-
   .final {
-    height: 10vw;
-    width: auto;
     position: absolute;
-    top: 67vw;
+    top: 295vw;
   }
+
   .final img {
     width: 100%;
     height: auto;
@@ -239,6 +237,41 @@
 
   .border2 {
     top: 240vw;
+  }
+  .names {
+    width: 40vw;
+    position: absolute;
+    top: 297vw;
+  }
+  .names img {
+    width: 100%;
+    height: auto;
+  }
+  .drag-message {
+    position: fixed;
+    bottom: 2vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(../img/win.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 20vw;
+    max-width: 90vw;
+    padding: 2vw 4vw;
+    color: rgba(13, 13, 13, 1);
+    font-family: "Schist", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.2vw;
+    text-align: center;
+    z-index: 10;
+    display: none;
+    pointer-events: none;
+    height: auto;
+    min-height: 6vw;
+    transition:
+      opacity 0.5s ease-in-out,
+      visibility 0.5s ease-in-out;
   }
 }
 
@@ -387,5 +420,126 @@
     position: absolute;
     top: 150vw;
     z-index: 3;
+  }
+  .pupil1 {
+    width: 40vw;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    top: 158vw;
+    left: 7vw;
+  }
+
+  .pupil2 {
+    width: 40vw;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    top: 157vw;
+    left: 47%;
+  }
+
+  .border2 {
+    width: 50vw;
+    top: 45.69%;
+  }
+
+  .wardrobebackground {
+    position: absolute;
+    top: 240vw;
+  }
+
+  .baghse {
+    width: 20vw;
+    position: absolute;
+    top: -6%;
+  }
+
+  .hair {
+    width: 20vw;
+    position: absolute;
+    top: 45%;
+  }
+
+  .hair2 {
+    width: 20vw;
+    position: absolute;
+    top: 6%;
+  }
+
+  .bookk {
+    width: 20vw;
+    position: absolute;
+    top: 50%;
+  }
+
+  .closedoor {
+    right: -1%;
+    top: -2%;
+  }
+
+  .opendoor {
+    top: -11%;
+  }
+  .final {
+    position: absolute;
+    top: 295vw;
+  }
+
+  .final img {
+    width: 100%;
+    height: auto;
+  }
+
+  .cut {
+    width: 7vw;
+    top: 285.5vw;
+    left: 15vw;
+    transform: rotate(7deg);
+  }
+
+  .cut2 {
+    width: 7vw;
+    top: 285.5vw;
+    left: 25vw;
+  }
+
+  .border2 {
+    top: 240vw;
+  }
+  .names {
+    width: 40vw;
+    position: absolute;
+    top: 297vw;
+  }
+  .names img {
+    width: 100%;
+    height: auto;
+  }
+  .drag-message {
+    position: fixed;
+    bottom: 2vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(../img/win.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 20vw;
+    max-width: 90vw;
+    padding: 2vw 4vw;
+    color: rgba(13, 13, 13, 1);
+    font-family: "Schist", Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1.2vw;
+    text-align: center;
+    z-index: 10;
+    display: none;
+    pointer-events: none;
+    height: auto;
+    min-height: 6vw;
+    transition:
+      opacity 0.5s ease-in-out,
+      visibility 0.5s ease-in-out;
   }
 }

@@ -666,30 +666,36 @@ body {
   transform: translate(-50%, -50%) scale(1);
 }
 
-/* Кнопка закрытия */
 .close-btn {
   position: absolute;
   top: -2vw;
   right: -2vw;
-  width: 4vw;
-  height: 4vw;
-  background: rgba(184, 135, 91, 1);
-  border: 0.2vw solid rgba(151, 110, 74, 1);
-  border-radius: 50%;
-  color: white;
-  font-size: 2vw;
+  width: 5vw;
+  height: 5vw;
+  background: transparent;
+  border: none;
   cursor: pointer;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
 }
 
+.close-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .close-btn:hover {
   transform: scale(1.1);
 }
 
-/* Картинки в модалках */
+.close-btn:active {
+  transform: scale(0.95);
+}
+
 .aboutlamp img,
 .aboutwheel img,
 .aboutprint img {
@@ -1016,7 +1022,6 @@ body {
   opacity: 1;
 }
 
-/* забыла проставить индекс у предметов в шкафу*/
 .men,
 .baghse,
 .hair,
@@ -1042,7 +1047,6 @@ body {
   opacity: 1;
 }
 
-/* Анимации для появления персонажа */
 @keyframes appear {
   0% {
     opacity: 0;
@@ -1097,6 +1101,29 @@ body {
 .bookk {
   transition: all 0.1s ease;
 }
+.reset-btn {
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  width: 5vw;
+  height: 5vw;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+}
+
+.reset-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.reset-btn:hover img {
+  transform: scale(1.1);
+}
 
 .hair:active,
 .hair2:active,
@@ -1106,9 +1133,8 @@ body {
 
 /* подвал */
 .final {
-  height: 20vw;
-  position: relative;
-  margin-top: 220vw;
+  position: absolute;
+  top: 295vw;
 }
 
 .final img {
@@ -1127,7 +1153,6 @@ body {
   left: 29vw;
 }
 
-/* Стили для перетаскивания */
 .minitape1,
 .minitape2,
 .minitape3,
@@ -1152,4 +1177,14 @@ body {
 .attached {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
   z-index: 10 !important;
+}
+
+.names {
+  width: 40vw;
+  position: absolute;
+  top: 297vw;
+}
+.names img {
+  width: 100%;
+  height: auto;
 }
