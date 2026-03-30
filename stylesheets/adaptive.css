@@ -338,7 +338,6 @@
   .final {
     position: absolute;
     top: 289vw;
-    z-index:;
   }
 
   .final img {
@@ -411,6 +410,10 @@
   }
   .close-btn {
     width: 10vw;
+  }
+
+  .logo {
+    top: 293vw;
   }
 }
 
@@ -810,5 +813,13 @@
     width: 150vw;
     left: -10vw;
     top: 223vw;
+  }
+  .logo {
+    top: 383vw;
+    left: 70vw;
+  }
+
+  .logo img {
+    width: 26vw;
   }
 }

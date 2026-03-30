@@ -1180,3 +1180,12 @@ body {
   width: 100%;
   height: auto;
 }
+
+.logo {
+  position: absolute;
+  left: 77vw;
+  top: 298vw;
+}
+.logo img {
+  width: 20vw;
+}
