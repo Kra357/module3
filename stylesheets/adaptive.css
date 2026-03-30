@@ -36,8 +36,9 @@
     height: auto;
   }
   .name {
+    width: 84vw;
     position: absolute;
-    top: -5vw;
+    left: 10vw;
   }
 
   .bigtape {
@@ -125,12 +126,12 @@
   }
 
   .lamp {
-    height: 35vw;
+    height: 28vw;
 
     position: absolute;
     z-index: 4;
-    top: 84vw;
-    left: 55vw;
+    top: 81vw;
+    left: 53vw;
   }
 
   .lamp:hover {
@@ -291,10 +292,10 @@
     overflow: hidden;
   }
   .name {
-    width: 90vw;
+    width: 110vw;
     position: absolute;
-    top: -5vw;
-    left: -3vw;
+    top: -4vw;
+    left: -7vw;
   }
   .cobweb {
     position: absolute;
@@ -311,7 +312,8 @@
   .bigtape {
     position: absolute;
     top: 18vw;
-    width: 120%;
+    width: 130vw;
+    left: -3vw;
   }
 
   .greetings img {
@@ -320,10 +322,11 @@
   }
   .box {
     display: grid;
-    place-items: center;
+    place-items: center start;
+    left: vw;
   }
   .box img {
-    max-width: 130%;
+    max-width: 200%;
   }
 
   .minitape1 {
@@ -352,7 +355,7 @@
   .minitape13,
   .minitape15 {
     position: absolute;
-    top: 15vw;
+    top: 70vw;
   }
 
   .minitape12 img,
@@ -362,16 +365,20 @@
     object-fit: contain;
     display: block;
     height: auto;
-    width: 17vw;
+    width: 22vw;
   }
   .minitape12 {
-    left: 80vw;
+    top: 20vw;
+    left: 70vw;
   }
 
   .minitape16 {
-    position: absolute;
+    display: block;
+    object-fit: contain;
+
     left: 80vw;
-    top: 20vw;
+    top: 60vw;
+    width: 30vw;
   }
 
   .minitape7,
@@ -382,122 +389,113 @@
   }
 
   .minitape14 {
+    object-fit: contain;
+    display: block;
+    width: 20vw;
     position: absolute;
-    top: 20vw;
+    top: 90vw;
   }
 
   .minitape14 img {
     object-fit: contain;
     display: block;
     height: auto;
-    width: 17vw;
+    width: 20vw;
   }
 
   .boxwiththings {
     position: absolute;
-    top: 70vw;
+    top: 100vw;
     z-index: -1;
+    width: 150vw;
   }
 
   .box2 {
-    width: 68vw;
     z-index: 1;
-    top: 105vw;
-    left: 19vw;
+    top: 150vw;
+    left: 10vw;
+    height: 70vw;
   }
 
   .shadow {
-    width: 100%;
-    height: 100%;
+    height: 30vw;
     position: absolute;
     z-index: 0;
-    top: 123vw;
+    top: 180vw;
     left: 30vw;
   }
 
   .boxinfront {
     width: auto;
-    height: 26vw;
+    height: 40vw;
     position: absolute;
     z-index: 5;
-    top: 116vw;
-    left: 31vw;
+    top: 169vw;
+    left: 20vw;
   }
 
   .firstwheel {
     width: auto;
-    height: 25vw;
+    height: 40vw;
     position: absolute;
     z-index: 2;
-    top: 99vw;
-    left: 31vw;
+    top: 140vw;
+    left: 22vw;
   }
   .firstwheel:hover {
     transform: scale(1.2);
-    top: calc(99vw - 7vw);
+    top: calc(140vw - 7vw);
   }
 
   .lamp {
     width: auto;
-    height: 35vw;
+    height: 55vw;
     position: absolute;
     z-index: 4;
-    top: 99vw;
-    left: 40vw;
+    top: 135vw;
+    left: 35vw;
   }
 
   .lamp:hover {
     transform: scale(1.1);
-    top: calc(99vw - 7vw);
+    top: calc(135vw - 7vw);
   }
 
   .printingmachine {
-    height: 32vw;
+    height: 55vw;
     position: absolute;
     z-index: 3;
-    top: 95vw;
+    top: 130vw;
     left: 40vw;
   }
   .printingmachine:hover {
-    top: calc(95vw - 10vw);
+    top: calc(130vw - 10vw);
     transform: scale(1.1);
   }
 
   .paper {
     width: auto;
-    height: 24vw;
+    height: 38vw;
     position: absolute;
     z-index: 7;
-    top: 125vw;
-    left: 19vw;
+    top: 180vw;
+    left: 4vw;
   }
 
   .eyebackground {
-    position: absolute;
-    top: 170vw;
+    display: none;
   }
 
   .eyebackground2 {
-    position: absolute;
-    top: 150vw;
-    z-index: 3;
+    display: none;
   }
+
   .pupil1 {
-    width: 40vw;
-    height: auto;
-    position: absolute;
-    z-index: 2;
-    top: 158vw;
-    left: 7vw;
+    display: none;
   }
 
   .pupil2 {
-    width: 40vw;
-    height: auto;
-    position: absolute;
-    z-index: 2;
-    top: 157vw;
-    left: 47%;
+    display: none;
   }
 
   .border2 {
@@ -544,7 +542,8 @@
   }
   .final {
     position: absolute;
-    top: 286vw;
+    top: 378vw;
+    width: 120vw;
   }
 
   .final img {
@@ -553,16 +552,11 @@
   }
 
   .cut {
-    width: 7vw;
-    top: 285.5vw;
-    left: 15vw;
-    transform: rotate(7deg);
+    display: none;
   }
 
   .cut2 {
-    width: 7vw;
-    top: 285.5vw;
-    left: 25vw;
+    display: none;
   }
 
   .border2 {
@@ -632,11 +626,59 @@
     transform: scale(0.95);
   }
 
-  .aboutlamp img,
-  .aboutwheel img,
-  .aboutprint img {
-    max-width: 100%;
-    height: auto;
+  .names {
+    position: absolute;
+    top: 380vw;
+    left: 3vw;
+    width: 60vw;
+  }
+
+  .wardrobebackground {
+    display: none;
+  }
+  .border2 {
+    display: none;
+  }
+
+  .desk {
+    transform: rotate(90deg);
+    top: 260vw;
+    width: 200vw;
+    left: -35vw;
+  }
+
+  .desk img {
+    object-fit: contain;
     display: block;
+    height: 100%;
+  }
+
+  .book {
+    top: 240vw;
+    width: 100vw;
+    left: -3vw;
+  }
+
+  .pen {
+    width: 50vw;
+    top: 320vw;
+  }
+
+  .eraser {
+    width: 25vw;
+    left: 4vw;
+    top: 350vw;
+  }
+
+  .color {
+    width: 40vw;
+    left: 33vw;
+    top: 330vw;
+  }
+
+  .border {
+    width: 150vw;
+    left: -10vw;
+    top: 223vw;
   }
 }

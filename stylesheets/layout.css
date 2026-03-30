@@ -464,7 +464,6 @@ body {
   position: absolute;
   top: 183vh;
   left: 35vw;
-  border: 2px solid rgb(255, 0, 0);
 }
 
 .box2 img {
@@ -479,10 +478,10 @@ body {
 }
 
 .shadow {
-  height: 55vh;
+  height: 20vw;
   z-index: 2;
   position: absolute;
-  top: 200vh;
+  top: 104vw;
   left: 42vw;
 }
 
